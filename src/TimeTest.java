@@ -1,4 +1,4 @@
-
+ 
 class Time {
 	private int hour;   // 0 ~ 23 사이의 값을 가져야 함
 	private int minute; // 0 ~ 59 사이의 값을 가져야 함

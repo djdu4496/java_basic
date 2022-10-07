@@ -10,4 +10,4 @@ class Ex7_6 {
 		out.println("Math.PI : " + PI);
 		
 	}
-}
+} 

@@ -25,4 +25,4 @@ class Ex7_1 {
 		stv.caption = true; // 캡션(자막)기능을 켠다.
 		stv.displayCaption("Hello, World");
 	}
-}
+} 
