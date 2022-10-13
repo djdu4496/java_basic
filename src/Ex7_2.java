@@ -22,3 +22,9 @@ class Child extends Parent {
 
 // 조상클래스의 멤버변수와 자식클래스의 멤버변수의 이름이 같을 때
 // super.x와 this.x로 구분할 수 있다. 
+
+/* 출력
+ * x= 20
+ * this.x= 20
+ * super.x= 10
+ * */
