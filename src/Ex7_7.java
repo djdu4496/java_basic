@@ -1,6 +1,3 @@
-import static java.lang.System.out;
-import static java.lang.Math.*;
-
 class Ex7_7 {
 	public static void main(String[] args) {
 		Car car = null;
