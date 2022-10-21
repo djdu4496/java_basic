@@ -25,7 +25,7 @@ class Marine {
     }
 }
 
-class Practice6_7to10 {
+class Practice6_7to10ㅡㅏ {
 
     public static void main(String[] args) {
 

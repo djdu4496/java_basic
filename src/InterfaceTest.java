@@ -1,33 +1,33 @@
 class A {
-//	public void method(B b) {  // ÀÎÅÍÆäÀÌ½º I¸¦ ±¸ÇöÇÑ ³Ñµé¸¸ µé¾î¿Í¶ó
-	public void method(I i) {  // ÀÎÅÍÆäÀÌ½º I¸¦ ±¸ÇöÇÑ ³Ñµé¸¸ µé¾î¿Í¶ó
+	//	public void method(C c) {  // Aê°€ B ëŒ€ì‹  Cë¥¼ ì‚¬ìš©í•˜ë ¤ë©´ ë‘ ê³³ì„ ìˆ˜ì •í•´ì•¼ í•œë‹¤.(1)
+	public void method(I i) {       // ì¸í„°í˜ì´ìŠ¤ Ië¥¼ êµ¬í˜„í•œ ë†ˆë“¤ë§Œ ë§¤ê°œë³€ìˆ˜ë¡œ ê°€ëŠ¥, B ëŒ€ì‹  Cë¥¼ ì‚¬ìš©í•´ë„ Aë¥¼ ë³€ê²½í•˜ì§€ ì•Šì•„ë„ ëœë‹¤.
 		i.method();
 	}
 }
 
-// BÅ¬·¡½ºÀÇ ¼±¾ğ°ú ±¸ÇöÀ» ºĞ¸®  
+// Bí´ë˜ìŠ¤ì˜ ì„ ì–¸ê³¼ êµ¬í˜„ì„ ë¶„ë¦¬
 interface I {
-	public void method();
+	public void method();  // ë©”ì„œë“œì˜ ì„ ì–¸
 }
 
 class B implements I {
 	public void method() {
-		System.out.println("BÅ¬·¡½ºÀÇ ¸Ş¼­µå");
-	}
+		System.out.println("Bí´ë˜ìŠ¤ì˜ ë©”ì„œë“œ");
+	}  // ë©”ì„œë“œì˜ êµ¬í˜„
 }
 
-class C implements I {
+class C implements I {     // Cê°€ ì¸í„°í˜ì´ìŠ¤ Ië¥¼ êµ¬í˜„í•´ì•¼ method()ì˜ ë§¤ê°œë³€ìˆ˜ë¡œ ê°€ëŠ¥
 	public void method() {
-		System.out.println("CÅ¬·¡½ºÀÇ ¸Ş¼­µå");
+		System.out.println("Cí´ë˜ìŠ¤ì˜ ë©”ì„œë“œ");
 	}
 }
 public class InterfaceTest {
 	public static void main(String[] args) {
 		A a = new A();
-		a.method(new C());  // A°¡ B¸¦ »ç¿ë(ÀÇÁ¸)
+		a.method(new C());  // Aê°€ B(C)ë¥¼ ì‚¬ìš©(ì˜ì¡´)  // Aê°€ B ëŒ€ì‹  Cë¥¼ ì‚¬ìš©í•˜ë ¤ë©´ ë‘ ê³³ì„ ìˆ˜ì •í•´ì•¼ í•œë‹¤.(2)
 	}
 }
 
-/* Ãâ·Â
- * BÅ¬·¡½ºÀÇ ¸Ş¼­µå
+/* ì¶œë ¥
+ * Bí´ë˜ìŠ¤ì˜ ë©”ì„œë“œ
  */
