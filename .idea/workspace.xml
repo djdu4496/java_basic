@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6126b1bf-bbce-487d-bc8d-b900a7e9265c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Ex7_12.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ex7_13.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ex7_14.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ex7_15.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ex7_16.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ex7_17.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ex7_18.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ex7_19.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex7_12.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex7_12.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex7_13.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex7_13.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex7_14.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Outer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex7_15.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex7_15.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex7_16.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex7_16.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex7_18.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex7_18.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex7_19.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex7_19.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,9 +46,11 @@
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "11",
     "last_opened_file_path": "/Users/jiwoo/java_basic/java_basic/src",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "inlay.hints"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -60,7 +61,21 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.InnerTest">
+  <component name="RunManager" selected="Application.Ex7_19">
+    <configuration name="Ex7_18" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Ex7_18" />
+      <module name="ch07" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ex7_19" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Ex7_19" />
+      <module name="ch07" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="InheritanceTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="InheritanceTest" />
       <module name="ch07" />
@@ -90,8 +105,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.InnerTest" />
+        <item itemvalue="Application.Ex7_19" />
+        <item itemvalue="Application.Ex7_18" />
         <item itemvalue="Application.InheritanceTest" />
+        <item itemvalue="Application.InnerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -108,7 +125,9 @@
       <workItem from="1666345361877" duration="20000" />
       <workItem from="1666345384133" duration="8000" />
       <workItem from="1666345393926" duration="3485000" />
-      <workItem from="1666428164848" duration="1932000" />
+      <workItem from="1666428164848" duration="2009000" />
+      <workItem from="1666512870604" duration="605000" />
+      <workItem from="1666513544179" duration="2610000" />
     </task>
     <servers />
   </component>
@@ -125,5 +144,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

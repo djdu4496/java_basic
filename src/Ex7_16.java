@@ -15,8 +15,8 @@ class Outer3 {
 
 class Ex7_16 {
     public static void main(String args[]) {
-        Outer outer = new Outer();
-        Outer.Inner inner = outer.new Inner();
-        inner.method1();
+//        Outer outer = new Outer();
+//        Outer.Inner inner = outer.new Inner();
+//        inner.method1();
     }
 } // Ex7_16 끝
