@@ -5,65 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6126b1bf-bbce-487d-bc8d-b900a7e9265c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch06/Ex6_1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch06/Ex6_2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch06/Ex6_3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch07/Ex7_1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch07/Ex7_7.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch07/Ex7_8.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch07/Ex7_9.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch08/Ex8_1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch08/Ex8_2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch08/Ex8_3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch08/Ex8_4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch08/Ex8_5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch08/Ex8_6.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch08/Ex8_7.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch08/Ex8_8.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch08/ExceptionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ch08/Ex8_10.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ch08/Ex8_9.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex6_1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex6_10.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch06/Ex6_10.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex6_11.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch06/Ex6_11.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex6_12.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch06/Ex6_12.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex6_13.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch06/Ex6_13.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex6_14.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch06/Ex6_14.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex6_15.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch06/Ex6_15.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex6_2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex6_3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex6_4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch06/Ex6_4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex6_5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch06/Ex6_5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex6_6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch06/Ex6_6.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex6_7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch06/Ex6_7.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex6_8.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch06/Ex6_8.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex6_9.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch06/Ex6_9.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex7_1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex7_10.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch07/Ex7_10.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex7_12.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch07/Ex7_12.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex7_13.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch07/Ex7_13.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex7_15.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch07/Ex7_15.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex7_16.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch07/Ex7_16.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex7_17.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch07/Ex7_17.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex7_18.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch07/Ex7_18.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex7_19.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch07/Ex7_19.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex7_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch07/Ex7_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex7_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch07/Ex7_3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex7_4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch07/Ex7_4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex7_6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch07/Ex7_6.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex7_7.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex7_8.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex7_9.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InheritanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch07/InheritanceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InnerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch07/InnerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InterfaceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch07/InterfaceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Outer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch07/Outer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OverrideTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch07/OverrideTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch07/PlayerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PointTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch07/PointTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TimeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch07/TimeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codechobo/book/PackageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch07/book/PackageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +48,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propCompiler"
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -119,13 +64,13 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Ex8_8">
-    <configuration name="Ex8_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ch08.Ex8_1" />
+  <component name="RunManager" selected="Application.Ex6_4">
+    <configuration name="Ex6_4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ch06.Ex6_4" />
       <module name="ch07" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ch08.*" />
+          <option name="PATTERN" value="ch06.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,8 +78,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Ex8_5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ch08.Ex8_5" />
+    <configuration name="Ex8_10" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ch08.Ex8_10" />
       <module name="ch07" />
       <extension name="coverage">
         <pattern>
@@ -185,6 +130,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Ex8_9" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ch08.Ex8_9" />
+      <module name="ch07" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ch08.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="java_basic" />
       <method v="2">
@@ -200,11 +158,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Ex6_4" />
+        <item itemvalue="Application.Ex8_9" />
         <item itemvalue="Application.Ex8_8" />
         <item itemvalue="Application.Ex8_7" />
         <item itemvalue="Application.Ex8_6" />
-        <item itemvalue="Application.Ex8_1" />
-        <item itemvalue="Application.Ex8_5" />
       </list>
     </recent_temporary>
   </component>
@@ -224,7 +182,10 @@
       <workItem from="1666428164848" duration="2009000" />
       <workItem from="1666512870604" duration="605000" />
       <workItem from="1666513544179" duration="7104000" />
-      <workItem from="1666578318205" duration="6290000" />
+      <workItem from="1666578318205" duration="6813000" />
+      <workItem from="1666679719944" duration="614000" />
+      <workItem from="1666680422090" duration="54000" />
+      <workItem from="1666680496353" duration="3268000" />
     </task>
     <servers />
   </component>
