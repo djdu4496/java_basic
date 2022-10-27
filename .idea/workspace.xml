@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6126b1bf-bbce-487d-bc8d-b900a7e9265c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ch09/Ex9_1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch09/Ex9_2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch09/Ex9_3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch09/Ex9_4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch09/Ex9_5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch09/Ex9_6.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch09/Ex9_7.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ch09/Ex9_8.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ch09/Ex9_10.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ch09/Ex9_11.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ch09/Ex9_12.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ch09/Ex9_9.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ch09/Ex9_5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ch09/Ex9_5.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,9 +66,9 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Ex9_4">
-    <configuration name="CardToString2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ch09.CardToString2" />
+  <component name="RunManager" selected="Application.Ex9_12">
+    <configuration name="Ex9_10" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ch09.Ex9_10" />
       <module name="ch07" />
       <extension name="coverage">
         <pattern>
@@ -83,9 +80,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Ex9_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="11" />
-      <option name="MAIN_CLASS_NAME" value="ch09.Ex9_1" />
+    <configuration name="Ex9_11" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ch09.Ex9_11" />
       <module name="ch07" />
       <extension name="coverage">
         <pattern>
@@ -97,21 +93,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Ex9_2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ch09.Ex9_2" />
-      <module name="ch07" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ch09.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Ex9_3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ch09.Ex9_3" />
+    <configuration name="Ex9_12" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ch09.Ex9_12" />
       <module name="ch07" />
       <extension name="coverage">
         <pattern>
@@ -125,6 +108,19 @@
     </configuration>
     <configuration name="Ex9_4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ch09.Ex9_4" />
+      <module name="ch07" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ch09.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ex9_9" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ch09.Ex9_9" />
       <module name="ch07" />
       <extension name="coverage">
         <pattern>
@@ -151,11 +147,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Ex9_12" />
+        <item itemvalue="Application.Ex9_11" />
+        <item itemvalue="Application.Ex9_10" />
+        <item itemvalue="Application.Ex9_9" />
         <item itemvalue="Application.Ex9_4" />
-        <item itemvalue="Application.CardToString2" />
-        <item itemvalue="Application.Ex9_3" />
-        <item itemvalue="Application.Ex9_2" />
-        <item itemvalue="Application.Ex9_1" />
       </list>
     </recent_temporary>
   </component>
@@ -185,7 +181,8 @@
       <workItem from="1666763738263" duration="297000" />
       <workItem from="1666764045597" duration="2949000" />
       <workItem from="1666772847970" duration="1105000" />
-      <workItem from="1666794975963" duration="143000" />
+      <workItem from="1666794975963" duration="386000" />
+      <workItem from="1666853827595" duration="1309000" />
     </task>
     <servers />
   </component>
