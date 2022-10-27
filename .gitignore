@@ -28,4 +28,11 @@
 hs_err_pid*
 replay_pid*
 
+.classpath
+.gitignore
+.project
+README.md
+ch07.iml
+
 # End of https://www.toptal.com/developers/gitignore/api/java
+
