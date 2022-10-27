@@ -1,4 +1,4 @@
-package practice6;
+package practice.ch06;
 
 /*
  * 6-18. 다음과 같이 정의된 메서드를 작성하고 테스트하시오.

@@ -1,4 +1,4 @@
-package ch07.book; // PackageTestŬ������ ���� ��Ű���� ����
+package ch07.com.codechobo.book; // PackageTestŬ������ ���� ��Ű���� ����
 
 public class PackageTest {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package practice6;
+package practice.ch06;
 
 /*
  * 6-11 다음 중 아래의 add메서드를 올바르게 오버로딩 한 것은? (모두 고르시오)

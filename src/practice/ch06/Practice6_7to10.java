@@ -1,4 +1,4 @@
-package practice6;
+package practice.ch06;
 
 /*
  * 6-7 다음은 컴퓨터 게임의 병사(marine)를 클래스로 정의한 것이다.

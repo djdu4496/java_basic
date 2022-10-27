@@ -1,10 +1,10 @@
-package practice6;
+package practice.ch06;
 
 /*
- * ´ÙÀ½°ú °°Àº ½ÇÇà°á°ú¸¦ ¾òµµ·Ï StudentÅ¬·¡½º¿¡ »ý¼ºÀÚ¿Í info()¸¦ Ãß°¡ÇÏ½Ã¿À.
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½òµµ·ï¿½ StudentÅ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ info()ï¿½ï¿½ ï¿½ß°ï¿½ï¿½Ï½Ã¿ï¿½.
  * class Practice6_2 {
        public static void main(String[] args) {
-           Student s = new Student("È«±æµ¿", 1, 1, 100, 60, 76);
+           Student s = new Student("È«ï¿½æµ¿", 1, 1, 100, 60, 76);
     	
     	    String str = s.info();
     	   System.out.println(str);
@@ -13,14 +13,14 @@ package practice6;
    
    class Student {
        //
-       //    (1) ¾Ë¸ÂÀº ÄÚµå¸¦ ³Ö¾î ¿Ï¼ºÇÏ½Ã¿À. 
+       //    (1) ï¿½Ë¸ï¿½ï¿½ï¿½ ï¿½Úµå¸¦ ï¿½Ö¾ï¿½ ï¿½Ï¼ï¿½ï¿½Ï½Ã¿ï¿½. 
        //
    }
  * */
 
 class Practice6_2 {
     public static void main(String[] args) {
-    	Student2 s = new Student2("È«±æµ¿", 1, 1, 100, 60, 76);
+    	Student2 s = new Student2("È«ï¿½æµ¿", 1, 1, 100, 60, 76);
     	
     	String str = s.info();
     	System.out.println(str);
@@ -28,12 +28,12 @@ class Practice6_2 {
 }
 
 class Student2 {
-	String name;    // ÇÐ»ýÀÌ¸§
-	int ban;        // ¹Ý
-	int no;         // ¹øÈ£
-	int kor;        // ±¹¾îÁ¡¼ö
-	int eng;        // ¿µ¾îÁ¡¼ö
-	int math;       // ¼öÇÐÁ¡¼ö
+	String name;    // ï¿½Ð»ï¿½ï¿½Ì¸ï¿½
+	int ban;        // ï¿½ï¿½
+	int no;         // ï¿½ï¿½È£
+	int kor;        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	int eng;        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	int math;       // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
 	Student2() { }
 	Student2(String name, int ban, int no, int kor, int eng, int math) {

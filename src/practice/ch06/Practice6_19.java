@@ -1,4 +1,4 @@
-package practice6;
+package practice.ch06;
 
 /*
  * 6-19. Tv클래스를 주어진 로직대로 완성하시오. 완성한 후에 실행해서 주어진 실행결과와 일치하는지 확인하다.

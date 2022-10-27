@@ -1,4 +1,4 @@
-package practice6;
+package practice.ch06;
 
 /*
  * 6-6 연습문제6-4에서 작성한 클래스메서드 getDistance()를 MyPoint클래스의 인스턴스메서드로 정의하시오.
