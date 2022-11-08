@@ -8,8 +8,8 @@ class Ex12_2_2 {
         HashMap<String, Student2> map = new HashMap<>();  // JDK1.7부터 생성자에 타입지정 생략가능
         map.put("자바왕", new Student2("자바왕", 1, 1, 100, 100, 100));
 
-//      Student2 s = (Student)map.get("자바왕");
-        Student2 s = map.get("자바왕");  // public Student get(Object key) {
+//      Student2 s = (Student)map.get("자바왕");  // public  Object get(Object key) {
+        Student2 s = map.get("자바왕");           // public Student get(Object key) {
 
         System.out.println(map);
         System.out.println(map.get("자바왕").name);
