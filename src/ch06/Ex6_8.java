@@ -14,11 +14,11 @@ public class Ex6_8 {
     }
     
     static Data3 copy(Data3 d) {
-    	Data3 tmp = new Data3(); // ���ο� ��ü tmp�� �����Ѵ�.
+    	Data3 tmp = new Data3(); // 새로운 객체 tmp를 생성한다.
     	
-    	tmp.x = d.x;   // d.x�� ���� tmp.x�� �����Ѵ�.
+    	tmp.x = d.x;   // d.x의 값을 tmp.x에 복사한다.
     	 
-    	return tmp;    // ������ ��ü�� �ּҸ� ��ȯ�Ѵ�.
+    	return tmp;    // 복사한 객체의 주소를 반환한다.
     }
 }
 
