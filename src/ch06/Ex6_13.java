@@ -1,9 +1,9 @@
 package ch06;
 
 class Car3 {
-	String color;    // ����
-	String gearType; // ���ӱ� ���� - auto(�ڵ�), manual(����)
-	int door;        // ���� ����
+	String color;    // 색상
+	String gearType; // 변속기 종류 - auto(자동), manual(수동)
+	int door;        // 문의 개수
 	
 	Car3() {
 		this("white", "auto", 4);
@@ -30,13 +30,13 @@ public class Ex6_13 {
     	
     	Car2 c2 = new Car2("white", "auto", 4);
     	
-    	System.out.println("c1�� color=" + c1.color + ", gearType= " + c1.gearType + ", door= " + c1.door);
-    	System.out.println("c2�� color=" + c2.color + ", gearType= " + c2.gearType + ", door= " + c2.door);
+    	System.out.println("c1의 color=" + c1.color + ", gearType= " + c1.gearType + ", door= " + c1.door);
+    	System.out.println("c2의 color=" + c2.color + ", gearType= " + c2.gearType + ", door= " + c2.door);
     }
 }
 
 /*
-	���
-	c1�� color=white, gearType= auto, door= 4
-	c2�� color=white, gearType= auto, door= 4
+	결과
+	c1의 color=white, gearType= auto, door= 4
+	c2의 color=white, gearType= auto, door= 4
 */

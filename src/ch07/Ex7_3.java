@@ -8,7 +8,7 @@ class Ex7_3 {
 }
 
 class Parent2 {
-	int x = 10; // super.x�� this.x �� �� ����
+	int x = 10; // super.x와 this.x 둘 다 가능
 }
 
 class Child2 extends Parent2 {
@@ -18,11 +18,10 @@ class Child2 extends Parent2 {
 		System.out.println("super.x= " + super.x);
 	}
 }
+// 조상의 멤버와 자신의 멤버를 구별하는데 사용된다는 점을 제외하면
+// this.x와 super.x는 근본적으로 같다.
 
-// ������ ����� �ڽ��� ����� �����ϴµ� ���ȴٴ� ���� �����ϸ�
-// this.x�� super.x�� �ٺ������� ����. 
-
-/* ���
+/* 출력
  * x= 10
  * this.x= 10
  * super.x= 10

@@ -6,7 +6,7 @@ class Ex6_15 {
 	
 	static {
 		for(int i = 0; i < arr.length; i++) {
-			// 1�� 10 ������ ������ ���� �迭 arr�� �����Ѵ�.
+			// 1과 10 사이의 임의의 값을 배열 arr에 저장한다.
 			arr[i] = (int)(Math.random() * 10) + 1;
 		}
 	}
@@ -18,7 +18,7 @@ class Ex6_15 {
 }
 
 /*
-	���
+	결과
 	arr[0] :10
 	arr[1] :3
 	arr[2] :7

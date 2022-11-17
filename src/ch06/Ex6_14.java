@@ -4,14 +4,14 @@ class Ex6_14 {
 	
 	static {
 		System.out.println("static { }");
-	} // Ŭ���� �ʱ�ȭ ��
+	} // 클래스 초기화 블럭
 	
 	{
 		System.out.println("{ }");
-	} // �ν��Ͻ� �ʱ�ȭ ��
+	} // 인스턴스 초기화 블럭
 	
 	public Ex6_14() {
-		System.out.println("������");
+		System.out.println("생성자");
 	}
 	
     public static void main(String[] args) {
@@ -24,12 +24,12 @@ class Ex6_14 {
 }
 
 /*
-	���
+	결과
 	static { }
 	ch06.Ex6_14 bt = new ch06.Ex6_14();
 	{ }
-	������
+	생성자
 	ch06.Ex6_14 bt2 = new ch06.Ex6_14();
 	{ }
-	������
+	생성자
 */
