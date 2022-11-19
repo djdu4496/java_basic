@@ -2,7 +2,7 @@ package ch07;
 
 class Product {
 	int price;      // ��ǰ�� ����
-	int bonusPoint; // ��ǰ���� �� �����ϴ� ���ʽ�����
+	int bonusPoint; 
 	
 	Product(int price) {
 		this.price = price;
