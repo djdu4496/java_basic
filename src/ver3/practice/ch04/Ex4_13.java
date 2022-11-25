@@ -5,9 +5,10 @@ package ver3.practice.ch04;
 
 public class Ex4_13 {
     public static void main(String[] args) {
-        String value = "12o34";
-        char ch = ' ';
+        String value = "12o3487987987428937489237428348237984723987498237847293748273984782379482374982374892378947238947239874892374982374982739847239847238947238974892347+";
+//        String value = "12o34";
         boolean isNumber = true;
+        char ch = ' ';
 
         // 반복문과 charAt(int i)를 이용해서 문자열의 문자를
         // 하나씩 읽어서 검사한다.
@@ -20,8 +21,10 @@ public class Ex4_13 {
             // 4. 조건식이 참이면, isNumber에 false를 저장한다.
 
             ch = value.charAt(i);        // 1. + 2.
-            if(!(48 <= ch && ch <= 57))  // 3.
-                isNumber = false;        // 4.
+            if(!('0' <= ch && ch <= '9')) {
+                isNumber = false;
+                break;
+            }
         }
 
         if(isNumber) {
