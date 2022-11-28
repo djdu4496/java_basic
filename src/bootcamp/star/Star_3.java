@@ -1,10 +1,10 @@
-package star;
+package bootcamp.star;
 /*
-    *
      *
-      *
-       *
-        *
+    *
+   *
+  *
+ *
  */
 public class Star_3 {
     public static void main(String[] args) {
