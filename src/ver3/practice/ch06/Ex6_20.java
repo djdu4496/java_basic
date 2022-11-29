@@ -29,10 +29,10 @@ class Practice6_17 {
         if(arr == null || arr.length == 0) return arr;
         // 2. 카드를 뒤섞는다.
         for(int i = 0; i < arr.length; i++) {
-            int j = (int)Math.random() * arr.length;
+            int ranIdx = (int)Math.random() * arr.length;  // 0부터 비교해야
             int tmp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = tmp;
+            arr[i] = arr[ranIdx];
+            arr[ranIdx] = tmp;
         }
         return arr;
     };
