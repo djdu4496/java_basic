@@ -9,17 +9,16 @@ package ver3.practice.ch06;
  * 매개변수 : int[] arr - 최대값을 구할 배열
  * */
 
-class Practice6_20 {
+class Ex6_23 {
     // (1) max메서드를 작성하시오.
     static int max(int[] arr) {
-        if(arr == null || arr.length == 0)
-            return -999999;
-        int max = arr[0];
-        for(int i = 1; i < arr.length; i++) { // 배열의 두 번째 값부터 비교한다.
-            if(max < arr[i])
-                max = arr[i];
-        }
-        return max;
+        // 1. 유효성 검사 - 만일 주어진 배열이 null이거나 크기아 0인 경우, -999999를 반환한다.
+        if(arr == null || arr.length == 0) return -999999;
+        // 2. 주어진 int형 배열의 값 중에서 제일 큰 값을 반환한다.
+        int max = arr[0];  // 제일 큰 값을 저장하기 위한 int형 변수 max 선언 및 arr[0]으로 초기화
+        for(int i = 1; i < arr.length; i++)   // arr[1]부터 arr[arr.length-1]까지 순회
+            max = max < arr[i] ? arr[i] : max;  // arr[i]이 max보다 크다면 max에 arr[i]를 재할당한다.
+        return max;  // 최대값 max 반환
     }
 
     public static void main(String[] args) {

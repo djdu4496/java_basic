@@ -8,10 +8,11 @@ package ver3.practice.ch06;
  * 매개변수 : int value;
  * */
 
-class Practice6_21 {
+class Ex6_24 {
     // (1) abs메서드를 작성하시오.
+    // 주어진 값의 절대값을 반환한다.
     static int abs(int value) {
-        return value < 0 ? -value : value;
+        return value = value < 0 ? -value : value;
     }
 
     public static void main(String[] args) {

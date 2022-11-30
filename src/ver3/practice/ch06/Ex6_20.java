@@ -10,26 +10,14 @@ package ver3.practice.ch06;
  * 매개변수 : int[] arr - 정수값이 담긴 배열
  * */
 
-//class Practice6_17 {
-//    // (1) shuffle메서드를 작성하시오.
-//
-//    public static void main(String[] args) {
-//        int[] original = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-//        System.out.println(Arrays.toString(original));
-//
-//        int[] result = shuffle(original);
-//        System.out.println(Arrays.toString(result));
-//    }
-//}
-
-class Practice6_17 {
+class Ex6_20 {
     // (1) shuffle메서드를 작성하시오.
     static int[] shuffle(int[] arr) {
         // 1. 유효성 검사
         if(arr == null || arr.length == 0) return arr;
         // 2. 카드를 뒤섞는다.
         for(int i = 0; i < arr.length; i++) {
-            int ranIdx = (int)Math.random() * arr.length;  // 0부터 비교해야
+            int ranIdx = (int)Math.random() * arr.length;  // 0부터 비교해야  // (int)Math.random() * arr.length vs (int)(Math.random() * arr.length)과 다른 이유
             int tmp = arr[i];
             arr[i] = arr[ranIdx];
             arr[ranIdx] = tmp;

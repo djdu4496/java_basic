@@ -12,27 +12,17 @@ package ver3.practice.ch06;
  * 힌트 : String클래스와 charAt(int i)메서드를 사용하면 문자열의 i번째 위치한 문자를 얻을 수 있다.
  * */
 
-//class Practice6_18 {
-//    // (1) isNumber메서드를 작성하시오.
-//
-//    public static void main(String[] args) {
-//        String str = "123";
-//        System.out.println(str + "는 숫자입니까?" + isNumber(str));
-//
-//        str = "1234o";
-//        System.out.println(str + "는 숫자입니까?" + isNumber(str));
-//    }
-//}
-
-class Practice6_18 {
+public class Ex6_22 {
     // (1) isNumber메서드를 작성하시오.
     static boolean isNumber(String str) {
+        // 1. 유효성 검사 - 만일 주어진 문자열이 null이거나 빈문자열 ""이라면 false를 반한한다.
         if(str == null || str.equals("")) return false;
 
+        // 2. 주어진 문자열이 모두 숫자만 이루어져 있는지 확인 - for문 사용
         for(int i = 0; i < str.length(); i++) {
-            int ch = str.charAt(i);
-            if(ch < '0' || ch > '9') {
-                return false;
+            char ch = str.charAt(i);  // 문자열 str의 i번 째 문자를 char 타입의 변수 ch에 저장
+            if(!('0' <= ch && ch <= '9')) {  // ch가 문자가 아니라면
+                return false;  // false를 반환
             }
         }
         return true;
