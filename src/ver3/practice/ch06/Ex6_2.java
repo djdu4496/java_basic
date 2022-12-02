@@ -28,6 +28,6 @@ class SutdaCard {
 	}
 	// 3. info메서드
 	String info() {
-		return isKwang ? num + "K" : num + "";
+		return num + (isKwang ? "K" : "");
 	}
 }

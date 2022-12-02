@@ -24,16 +24,28 @@ public class Ex5_8 {
 
             // 2트
             // for문을 이용해서 위 과정을 구현했다.
-            for(int j = 1; j <= 4; j++) {  // // 장점 for문을 사용한 결과, 규칙성 있게 나열된 값을 변수로 표현할 수 있었다.
-                if(answer[i] == j)
-                    counter[j-1]++;
-            }
+//            for(int j = 1; j <= 4; j++) {  // // 장점 for문을 사용한 결과, 규칙성 있게 나열된 값을 변수로 표현할 수 있었다.
+//                if(answer[i] == j)
+//                    counter[j-1]++;
+//            }
+
+            // 3트
+            // '카운팅'을 이용해서 풀어보자.
+            counter[answer[i] - 1]++;
         }
 
         for(int i = 0; i < counter.length; i++) {
             // (2) 알맞은 코드를 완성하시오.
-            System.out.print(i + 1);
-            for(int j = 0; j < counter[i]; j++) // i + 1의 개수 만큼 "*"을 출력
+            // 1트 ~ 2트 동일
+//            System.out.print(i + 1);
+//            for(int j = 0; j < counter[i]; j++) // i + 1의 개수 만큼 "*"을 출력
+//                System.out.print("*");
+
+            // 3트
+            // 1. * 개수를 출력한다.
+            System.out.print(counter[i]);
+            // 2. *을 개수만큼 출력한다.
+            for(int j = 0; j < counter[i]; j++)
                 System.out.print("*");
             System.out.println();
         }

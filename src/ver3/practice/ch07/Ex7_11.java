@@ -44,7 +44,7 @@ class MyTv2 {
     }
 
     void gotoPrevChannel() {
-        // prevChannel을 인수로 지정하고 setChannel을 호출하면, 이전 채널로 이동한다.
+        // prevChannel을 인자로 지정하고 setChannel을 호출하면, 이전 채널로 이동한다.
         setChannel(prevChannel);
     }
 }
