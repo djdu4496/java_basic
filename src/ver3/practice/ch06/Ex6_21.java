@@ -15,7 +15,8 @@ class MyTv {
 
     void turnOnOff() {
         // (1) isPowerOn의 값이 true면 false로, false면 true로 바꾼다.
-        isPowerOn = isPowerOn ? true : false; // isPowerOn == true ? isPowerOn = false : isPowerOn = true;
+//        isPowerOn = isPowerOn ? true : false; // isPowerOn == true ? isPowerOn = false : isPowerOn = true;
+        isPowerOn = !isPowerOn;
     }
 
     void volumeUp() {

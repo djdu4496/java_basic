@@ -1,37 +1,15 @@
 package ver3.practice.ch06;
 
-// 다음의 코드를 컴파일하면 에러가 발생한다. 컴파일 에러가 발생하는 라인과 그 이유를 설명하시오.
+// 다음 코드의 실행 결과를 예측하여 적으시오.
 
-public class Ex6_18 {
+public class Ex6_19 {
+    public static void change(String str) {
+        str += "456";
+    }
     public static void main(String[] args) {
-
+        String str = "ABC123";
+        System.out.println(str);
+        change(str);
+        System.out.println("After change:" + str);
     }
 }
-
-//class MemberCall {
-//    int iv = 10;
-//    static int cv = 20;
-//
-//    int iv2 = cv;
-//    static int cv2 = iv;         // 라인 A
-//
-//    static void staticMethod1() {
-//        System.out.println(cv);
-//        System.out.println(iv);  // 라인 B
-//    }
-//
-//    void instanceMethod1() {
-//        System.out.println(cv);
-//        System.out.println(iv);  // 라인 C
-//    }
-//
-//    static void staticMethod2() {
-//        staticMethod1();
-//        instanceMethod1();       // 라인 D
-//    }
-//
-//    void instanceMethod2() {
-//        staticMethod1();
-//        instanceMethod1();       // 라인 E
-//    }
-//}
