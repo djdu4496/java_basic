@@ -1,22 +1,28 @@
 package ver3.practice.ch08;
 
-// 다음은 실행도중 예외가 발생하여 화면에 출력된 내용이다. 이에 대한 설명 중 옳지 않은 것은?
 /**
- *  java.lang.ArithmeticException : / by zero
- *      at ExceptionEx18.method2(ExceptionEx18.java:12)
- *      at ExceptionEx18.method1(ExceptionEx18.java:8)
- *      at ExceptionEx18.main(ExceptionEx18.java:4)
+ // 다음 중 오버라이딩이 잘못된 것은? (모두 고르시오)
+ *  void add(int a, int b)
+ *      throws InvalidNumberException, NotANumberException {}
+ *
+ *      class NumberException extends Exception {}
+ *      class InvalidNumberException extends NumberException {}
+ *      class NotANumberException extends NumberException {}
  */
 
-public class Ex8_2 {
+public class Ex8_3 {
     public static void main(String[] args) {
-        System.out.println("a. 위의 내용으로 예외가 발생했을 당시 호출스택에 존재했던 메서드를 알 수 있다.");
-        System.out.println("답안 : O");
-        System.out.println("b. 예외가 발생한 위치는 method2메서드이며, ExceptionEx18.java파일의 12번째 줄이다.");
-        System.out.println("답안 : O");
-        System.out.println("c. 발생한 예외는 ArithmeticException이며, 0으로 나누어서 예외가 발생했다.");
-        System.out.println("답안 : O");
-        System.out.println("d. method2메서드가 method1메서드를 호출하였고 그 위치는 ExceptionEx18.java파일의 8번째 줄이다.");
-        System.out.println("답안 : X, method1메서드가 method2메서드를 호출하였다.");
+        System.out.println("오버라이딩 두 번째 조건 : 조상클래스의 메서드보다 예외를 많이 선언할 수 없다.");
+        System.out.println("Java API를 찾아보니 존재하지 않는 예외였다.");
+        System.out.println("a. void add(int a, int b) throws InvalidNumberException, NotANumberException");
+        System.out.println("답안 : X");
+        System.out.println("b. void add(int a, int b) throws InvalidNumberException");
+        System.out.println("답안 : X");
+        System.out.println("c. void add(int a, int b) throws NotANumberException");
+        System.out.println("답안 : X");
+        System.out.println("d. void add(int a, int b) throws Exception");
+        System.out.println("답안 : O, Exception은 모든 예외의 최고 조상이므로 가장 많은 개수의 예외를 던질 수 있도록 선언한 것이다. 따라서 조건에 위배된다.");
+        System.out.println("e. void add(int a, int b) throws NumberException");
+        System.out.println("답안 : O, NumberException은 InvalidNumberException, NotANumberException 두 예외의 조상이므로 두 에외보다 많은 예외를 던질 수 있도록 선언한 것이다. 따라서 조건에 위배된다.");
     }
 }

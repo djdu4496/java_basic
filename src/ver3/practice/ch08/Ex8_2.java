@@ -1,10 +1,22 @@
 package ver3.practice.ch08;
 
-// 예외처리의 정의와 목적에 대해 성명하시오.
+// 다음은 실행도중 예외가 발생하여 화면에 출력된 내용이다. 이에 대한 설명 중 옳지 않은 것은?
+/**
+ *  java.lang.ArithmeticException : / by zero
+ *      at ExceptionEx18.method2(ExceptionEx18.java:12)
+ *      at ExceptionEx18.method1(ExceptionEx18.java:8)
+ *      at ExceptionEx18.main(ExceptionEx18.java:4)
+ */
 
-public class Ex8_1 {
+public class Ex8_2 {
     public static void main(String[] args) {
-        System.out.println("예외처리의 정의 : 프로그램 실행 시 발생할 수 있는 예외에 대비한 코드를 작성하는 것");
-        System.out.println("예외처리의 목적 : 프로그램의 비정상 종료를 막고, 정상적인 실행상태를 유지하는 것.");
+        System.out.println("a. 위의 내용으로 예외가 발생했을 당시 호출스택에 존재했던 메서드를 알 수 있다.");
+        System.out.println("답안 : O");
+        System.out.println("b. 예외가 발생한 위치는 method2메서드이며, ExceptionEx18.java파일의 12번째 줄이다.");
+        System.out.println("답안 : O");
+        System.out.println("c. 발생한 예외는 ArithmeticException이며, 0으로 나누어서 예외가 발생했다.");
+        System.out.println("답안 : O");
+        System.out.println("d. method2메서드가 method1메서드를 호출하였고 그 위치는 ExceptionEx18.java파일의 8번째 줄이다.");
+        System.out.println("답안 : X, method1메서드가 method2메서드를 호출하였다.");
     }
 }
