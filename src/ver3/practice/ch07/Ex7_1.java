@@ -19,7 +19,7 @@ package ver3.practice.ch07;
 //        }
 //    }
 //}
-
+//
 //class SutdaCard {
 //    int num;
 //    boolean isKwang;
@@ -38,7 +38,7 @@ package ver3.practice.ch07;
 //        return num + ( isKwang ? "K" : "");
 //    }
 //}
-
+//
 //public class Ex7_1 {
 //    public static void main(String[] args) {
 //        SutdaDeck deck = new SutdaDeck();
