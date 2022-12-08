@@ -4,23 +4,23 @@ package ver3.practice.ch07;
 // 카드의 숫자가 한번 잘못 바뀌면 똑같은 카드가 두 장이 될 수도 있기 때문이다.
 // 이러한 문제점이 발생하지 않도록 아래의 SutdaCard를 수정하시오.
 
-class SutdaCard {
-    final int NUM;
-    final boolean ISKWANG;
-
-    SutdaCard() {
-        this(1, true);
-    }
-
-    SutdaCard(int num, boolean isKwang) {
-        NUM = num;
-        ISKWANG = isKwang;
-    }
-
-    public String toString() {
-        return NUM + ( ISKWANG ? "K":"");
-    }
-}
+//class SutdaCard {
+//    final int NUM;
+//    final boolean ISKWANG;
+//
+//    SutdaCard() {
+//        this(1, true);
+//    }
+//
+//    SutdaCard(int num, boolean isKwang) {
+//        NUM = num;
+//        ISKWANG = isKwang;
+//    }
+//
+//    public String toString() {
+//        return NUM + ( ISKWANG ? "K":"");
+//    }
+//}
 
 class Ex7_14 {
     public static void main(String[] args) {
