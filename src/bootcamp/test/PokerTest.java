@@ -35,30 +35,30 @@ public class PokerTest {
             }
         }
 
+        // 2. 족보 확인
         if(quartet == 1)
             result = "FOUR OF A KIND";
         else if(trio == 1)
-            if(pair == 1)
-                result = "FULL HOUSE";
-            else
-                result = "THREE OF A KIND";
+            result = (pair == 1) ? "FULL HOUSE" : "THREE OF A KIND";
         else if(pair == 2)
             result = "TWO PAIR";
         else if(pair == 1)
             result = "ONE PAIR";
+        else
+            result = "NO PAIR";
 
         // STRAIGHT
         if(pickedCards[0].num + 1 == pickedCards[1].num &&
-                pickedCards[1].num + 1 == pickedCards[2].num &&
-                pickedCards[2].num + 1 == pickedCards[3].num &&
-                pickedCards[3].num + 1 == pickedCards[4].num)
+            pickedCards[1].num + 1 == pickedCards[2].num &&
+            pickedCards[2].num + 1 == pickedCards[3].num &&
+            pickedCards[3].num + 1 == pickedCards[4].num)
             result = "STRAIGHT";
 
         // FLUSH
         if(pickedCards[0].kind  == pickedCards[1].kind &&
-                pickedCards[1].kind == pickedCards[2].kind &&
-                pickedCards[2].kind == pickedCards[3].kind &&
-                pickedCards[3].kind == pickedCards[4].kind)
+            pickedCards[1].kind == pickedCards[2].kind &&
+            pickedCards[2].kind == pickedCards[3].kind &&
+            pickedCards[3].kind == pickedCards[4].kind)
             result = "FLUSH";
 
         return result;
@@ -172,7 +172,7 @@ class Card {
     int num; // 카드의 숫자
 
     Card() {
-        this(1, "SPACE");
+        this(1, "SPADE");
     }
 
     Card(int num, String kind) {

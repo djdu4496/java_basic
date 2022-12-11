@@ -2,19 +2,13 @@ package bootcamp.poker;
 
 public class Poker {
     public static void main(String[] args) {
-        Deck d = new Deck();                    // 1. 카드 묶음 준비
-        d.shuffle();                            // 2. 카드 섞기
-        d.pickingCards();                       // 3. 카드 5장 뽑기
-        d.sort();                               // 4. 카드 오름차순 정렬
-        d.rankCheck(d.pickedCards);             // 5. 족보 체크
+        Deck d = new Deck();                                        // 1. 카드 묶음 준비
+        d.shuffle();                                                // 2. 카드 섞기
+        d.pickingCards();                                           // 3. 카드 5장 뽑기
+        d.sort();                                                   // 4. 카드 오름차순 정렬
+        System.out.println(d.rankCheck(d.pickedCards));             // 5. 족보 체크
     } // main메서드의 끝
 }
-
-// feedback 1. PAIR면 스트레이트가 나올 수 없다.
-// feedback 2. 무늬는 카운터할 필요 없다. 다섯 개만 비교하면 되니까(첫 번째 것과 최대값, 최소값(대소비교)로 구하면 된다.
-// 앞에서는 계산하고,
-// 마지막은 최종적으로 그 값에 따라서 그 결과를 어떻게 나올지 '모아놓으면' 좋다.
-// FLUSH인지, Straight인지~ '조합'이 있다. 마지막에 인지 아닌지~
 
 class Deck {
     static final int CARD_NUM = 52;
@@ -84,14 +78,13 @@ class Deck {
         if(quartet == 1)
             result = "FOUR OF A KIND";
         else if(trio == 1)
-            if(pair == 1)
-                result = "FULL HOUSE";
-            else
-                result = "THREE OF A KIND";
+            result = (pair == 1) ? "FULL HOUSE" : "THREE OF A KIND";
         else if(pair == 2)
             result = "TWO PAIR";
         else if(pair == 1)
             result = "ONE PAIR";
+        else
+            result = "NO PAIR";
 
         // STRAIGHT
         if(pickedCards[0].number + 1 == pickedCards[1].number &&
@@ -139,3 +132,9 @@ class Card {
     }  // toString()의 끝
 } // Card클래스의 끝
 
+
+// feedback 1. PAIR면 스트레이트가 나올 수 없다.
+// feedback 2. 무늬는 카운터할 필요 없다. 다섯 개만 비교하면 되니까(첫 번째 것과 최대값, 최소값(대소비교)로 구하면 된다.
+// 앞에서는 계산하고,
+// 마지막은 최종적으로 그 값에 따라서 그 결과를 어떻게 나올지 '모아놓으면' 좋다.
+// FLUSH인지, Straight인지~ '조합'이 있다. 마지막에 인지 아닌지~
