@@ -49,18 +49,44 @@ class Deck {
             }
         }
     }
+    // 메서드명 : rankCheck
+    // 반환타입 : String
+    // 매개변수 : Card[] cardArr
+        // 5-1. 족보 계산 - (1) 카운팅 (2) PAIR, TRIO, QUARTET 조합 수 계산
+        // 5-2. 족보 확인
     String rankCheck(Card[] pickedCards) {
         // 5-1. 족보 계산
-            // 5-1-1. 카운팅(버킷 알고리즘)
-            // 5-1-2. 페어 계산 - duo, trio, quartet
+        int[] counter = getCounter(pickedCards);
+        String result = getResult(counter);
+
         // 5-2. 족보 확인
+        // 5-2-1. FLUSH, STRAIGHT, STRAIGHT FLUSH
+        boolean isFlush = isFlush(pickedCards);
+        boolean isStraight = isStraight(pickedCards);
 
-        String result = "";
-        int[] counter = new int[Card.NUM_MAX + 1];
+        if(isFlush && isStraight) return "STRAIGHT FLUSH";
+        if(isFlush) return "FLUSH";
+        if(isStraight) return "STRAIGHT";
 
-        for (int i = 0; i < pickedCards.length; i++) {
-            counter[pickedCards[i].number]++;
-        }
+        // 5-2-2. OTHERS(FULL HOUSE, FOUR CARD, THREE CARD, TWO PAIR, ONE PAIR)
+        return result;
+    }
+
+    private static boolean isStraight(Card[] pickedCards) {
+        return pickedCards[0].number + 1 == pickedCards[1].number &&
+                pickedCards[1].number + 1 == pickedCards[2].number &&
+                pickedCards[2].number + 1 == pickedCards[3].number &&
+                pickedCards[3].number + 1 == pickedCards[4].number;
+    }
+
+    private static boolean isFlush(Card[] pickedCards) {
+        return pickedCards[0].kind == pickedCards[1].kind &&
+                pickedCards[1].kind == pickedCards[2].kind &&
+                pickedCards[2].kind == pickedCards[3].kind &&
+                pickedCards[3].kind == pickedCards[4].kind;
+    }
+
+    private String getResult(int[] counter) {
         int pair = 0;    // 2형제
         int trio = 0;    // 3형제
         int quartet = 0; // 4형제
@@ -75,32 +101,23 @@ class Deck {
             }
         }
 
-        if(quartet == 1)
-            result = "FOUR OF A KIND";
-        else if(trio == 1)
-            result = (pair == 1) ? "FULL HOUSE" : "THREE OF A KIND";
-        else if(pair == 2)
-            result = "TWO PAIR";
-        else if(pair == 1)
-            result = "ONE PAIR";
-        else
-            result = "NO PAIR";
+        if(quartet==1) return "FOUR CARD";
+        if(trio==1&&pair==1) return "FULL HOUSE";
+        if(trio==1&&pair==0) return "THREE CARD";
+        if(pair==2) return "TWO PAIR";
+        if(pair==1) return "ONE PAIR";
 
-        // STRAIGHT
-        if(pickedCards[0].number + 1 == pickedCards[1].number &&
-                pickedCards[1].number + 1 == pickedCards[2].number &&
-                pickedCards[2].number + 1 == pickedCards[3].number &&
-                pickedCards[3].number + 1 == pickedCards[4].number)
-            result = "STRAIGHT";
+        return "NO PAIR";
+    }
 
-        // FLUSH
-        if(pickedCards[0].kind  == pickedCards[1].kind &&
-                pickedCards[1].kind == pickedCards[2].kind &&
-                pickedCards[2].kind == pickedCards[3].kind &&
-                pickedCards[3].kind == pickedCards[4].kind)
-            result = "FLUSH";
+    private static int[] getCounter(Card[] pickedCards) {
+        int[] counter;
+        counter = new int[Card.NUM_MAX + 1];
 
-        return result;
+        for (int i = 0; i < pickedCards.length; i++) {
+            counter[pickedCards[i].number]++;
+        }
+        return counter;
     }
 }
 

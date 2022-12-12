@@ -6,21 +6,46 @@ import static org.junit.Assert.*;
 
 public class PokerTest {
 
-    // 메서드명 : rankCheck
-    // 반환타입 : String
-    // 매개변수 : Card[] cardArr
-    String rankCheck(Card[] pickedCards) {
-        // 5-1. 족보 계산
-        // 5-1-1. 카운팅(버킷 알고리즘)
-        // 5-1-2. 페어 계산 - duo, trio, quartet
-        // 5-2. 족보 확인
+        // 메서드명 : rankCheck
+        // 반환타입 : String
+        // 매개변수 : Card[] cardArr
+           // 5-1. 족보 계산
+           // 5-1-1. 카운팅(버킷 알고리즘)
+           // 5-1-2. 페어 계산 - duo, trio, quartet
+           // 5-2. 족보 확인
+        String rankCheck(Card[] pickedCards) {
+            // 5-1. 족보 계산
+            int[] counter = getCounter(pickedCards);
+            String result = getResult(counter);
 
-        String result = "";
-        int[] counter = new int[Card.NUM_MAX + 1];
+            // 5-2. 족보 확인
+            // 5-2-1. FLUSH, STRAIGHT, STRAIGHT FLUSH
+            boolean isFlush = isFlush(pickedCards);
+            boolean isStraight = isStraight(pickedCards);
 
-        for (int i = 0; i < pickedCards.length; i++)
-            counter[pickedCards[i].num]++;
+            if(isFlush && isStraight) return "STRAIGHT FLUSH";
+            if(isFlush) return "FLUSH";
+            if(isStraight) return "STRAIGHT";
 
+            // 5-2-2. OTHERS(FULL HOUSE, FOUR CARD, THREE CARD, TWO PAIR, ONE PAIR)
+            return result;
+        }
+
+    private static boolean isStraight(Card[] pickedCards) {
+        return pickedCards[0].num + 1 == pickedCards[1].num &&
+                pickedCards[1].num + 1 == pickedCards[2].num &&
+                pickedCards[2].num + 1 == pickedCards[3].num &&
+                pickedCards[3].num + 1 == pickedCards[4].num;
+    }
+
+    private static boolean isFlush(Card[] pickedCards) {
+        return pickedCards[0].kind == pickedCards[1].kind &&
+                pickedCards[1].kind == pickedCards[2].kind &&
+                pickedCards[2].kind == pickedCards[3].kind &&
+                pickedCards[3].kind == pickedCards[4].kind;
+    }
+
+    private String getResult(int[] counter) {
         int pair = 0;    // 2형제
         int trio = 0;    // 3형제
         int quartet = 0; // 4형제
@@ -35,35 +60,24 @@ public class PokerTest {
             }
         }
 
-        // 2. 족보 확인
-        if(quartet == 1)
-            result = "FOUR OF A KIND";
-        else if(trio == 1)
-            result = (pair == 1) ? "FULL HOUSE" : "THREE OF A KIND";
-        else if(pair == 2)
-            result = "TWO PAIR";
-        else if(pair == 1)
-            result = "ONE PAIR";
-        else
-            result = "NO PAIR";
+        if(quartet==1) return "FOUR CARD";
+        if(trio==1&&pair==1) return "FULL HOUSE";
+        if(trio==1&&pair==0) return "THREE CARD";
+        if(pair==2) return "TWO PAIR";
+        if(pair==1) return "ONE PAIR";
 
-        // STRAIGHT
-        if(pickedCards[0].num + 1 == pickedCards[1].num &&
-            pickedCards[1].num + 1 == pickedCards[2].num &&
-            pickedCards[2].num + 1 == pickedCards[3].num &&
-            pickedCards[3].num + 1 == pickedCards[4].num)
-            result = "STRAIGHT";
-
-        // FLUSH
-        if(pickedCards[0].kind  == pickedCards[1].kind &&
-            pickedCards[1].kind == pickedCards[2].kind &&
-            pickedCards[2].kind == pickedCards[3].kind &&
-            pickedCards[3].kind == pickedCards[4].kind)
-            result = "FLUSH";
-
-        return result;
+        return "NO RANK";
     }
 
+    private static int[] getCounter(Card[] pickedCards) {
+        int[] counter;
+        counter = new int[Card.NUM_MAX + 1];
+
+        for (int i = 0; i < pickedCards.length; i++) {
+            counter[pickedCards[i].num]++;
+        }
+        return counter;
+    }
 
     @Test
     public void onepairTest() {
@@ -89,7 +103,6 @@ public class PokerTest {
         // 테스트
         String result = rankCheck(cardArr);
         // 확인
-        System.out.println(result);
         assertTrue(result.equals("TWO PAIR"));
     }
 
@@ -102,7 +115,7 @@ public class PokerTest {
         // 테스트
         String result = rankCheck(cardArr);
         // 확인
-        assertTrue(result.equals("FOUR OF A KIND"));
+        assertTrue(result.equals("FOUR CARD"));
     }
 
 
@@ -119,7 +132,6 @@ public class PokerTest {
 
 
         // 확인
-        System.out.println(result);
         assertTrue(result.equals("FULL HOUSE"));
 
     }
@@ -130,17 +142,26 @@ public class PokerTest {
         Card[] cardArr = {
                 new Card(1,"H"),new Card(8,"H"),new Card(3,"H"),
                 new Card(4,"H"),new Card(5,"H")};
-        Card[] cardArr2 = {
+
+
+        // 테스트
+        String result = rankCheck(cardArr);
+
+        // 확인
+        assertTrue(result.equals("FLUSH"));
+    }
+    @Test
+    public void straightFlushTest() {
+        // 조건
+        Card[] cardArr = {
                 new Card(1,"H"),new Card(2,"H"),new Card(3,"H"),
                 new Card(4,"H"),new Card(5,"H")};
 
         // 테스트
         String result = rankCheck(cardArr);
-        String result2 = rankCheck(cardArr2);
 
         // 확인
-        assertTrue(result.equals("FLUSH"));
-        assertTrue(result2.equals("FLUSH"));
+        assertTrue(result.equals("STRAIGHT FLUSH"));
     }
 
 
@@ -158,8 +179,22 @@ public class PokerTest {
         String result = rankCheck(cardArr);
 
         // 확인
-        System.out.println(result);
         assertTrue(result.equals("STRAIGHT"));
+
+    }
+    @Test
+    public void noRankTest() {
+
+        // 조건
+        Card[] cardArr = {
+                new Card(1,"D"),new Card(3,"S"),new Card(5,"H"),
+                new Card(7,"D"),new Card(9,"C")};
+
+        // 테스트
+        String result = rankCheck(cardArr);
+
+        // 확인
+        assertTrue(result.equals("NO RANK"));
 
     }
 
