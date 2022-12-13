@@ -27,10 +27,10 @@ public class Ex8_8 {
         int count = 0;   // 시도횟수를 세기 위한 변수
 
         do {
-            try {
+//          try {  // try블럭은 최대한 코드를 줄이는 것이 좋다.
                 count++;
                 System.out.println("1과 100사이의 값을 입력하세요 :");
-
+            try {
                 input = new Scanner(System.in).nextInt();
 
                 if(answer > input) {
@@ -45,6 +45,7 @@ public class Ex8_8 {
             } catch(InputMismatchException ime) {
 //                ime.printStackTrace();
 //                continue;  // 'continue' is unnecessary as the last statement in a loop
+                System.out.println("유효하지 않은 값입니다. 다시 값을 입력해주세요.");
             }
         } while(true);  // 무한반복문
     }  // end of main

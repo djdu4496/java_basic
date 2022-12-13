@@ -18,12 +18,12 @@ public class Ex8_4 {
         System.out.println("c. try { method(); } catch(Exception e) {} catch(NumberException e) {}");
         System.out.println("답안 : O, Exception타입의 참조변수를 지정한 catch블럭이 마지막에 오지 않았기 때문에 뒤 catch블럭은 쓰이지 않는다. ");  // Exception 'java.lang.NumberException' has already been caught
         System.out.println("d. try { method(); } catch(InvalidNumberException e) {} catch(NotANumberException e) {}");
-        System.out.println("답안 : X, 메서드에 선언한 두 예외를 모두 처리해주었기 때문에 문제가 없다.");
+        System.out.println("답안 : O, 메서드에 선언한 두 예외를 모두 처리해주었기 때문에 문제가 없다.");
         System.out.println("e. try { method(); } catch(NumberException e) {}");
         System.out.println("답안 : O, 메서드에 선언한 두 예외의 조상인 NumberException타입의 참조변수를 선언한 catch블럭이 두 예외를 모두 처리할 수 있다.");
         System.out.println("f. try { method(); } catch(RuntimeException  e) {}");
-        System.out.println("답안 : X, 두 예외의 조상 타입인 RuntimeException타입의 참조변수를 선언한 catch블럭이 두 예외를 처리할 수 있다.");
-        System.out.println("답안 : c, e");
+        System.out.println("답안 : O, 두 예외의 조상 타입인 RuntimeException타입의 참조변수를 선언한 catch블럭이 두 예외를 처리할 수 있다.");
+        System.out.println("답안 : c");
 
 
     }
