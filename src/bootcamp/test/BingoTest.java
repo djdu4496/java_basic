@@ -22,19 +22,19 @@ public class BingoTest {
             // 2. 역대각선 - i + j == 4를 만족하는 요소들이 모두 1인 경우, 빙고 개수 추가
 
         // 2. 빙고 총합 계산
+        int cnt = 0;
         int bingo = 0; // 빙고의 총 개수 저장
 
-        bingo += garoCount(board);               // 1. 가로 줄 빙고 갯수 구하기
-        bingo += seroCount(board);               // 2. 세로 줄 빙고 갯수 구하기
-        bingo += diagonalCount(board);           // 3. 대각선 빙고 갯수 구하기
-        bingo += antiDiagonalCount(board);       // 4. 역대각선 빙고 갯수 구하기
+        bingo += garoCount(board, cnt);               // 1. 가로 줄 빙고 갯수 구하기
+        bingo += seroCount(board, cnt);               // 2. 세로 줄 빙고 갯수 구하기
+        bingo += diagonalCount(board, cnt);           // 3. 대각선 빙고 갯수 구하기
+        bingo += antiDiagonalCount(board, cnt);       // 4. 역대각선 빙고 갯수 구하기
 
         return bingo;
 
     }
 
-    int antiDiagonalCount(int[][] board) {              // 역대각선  - i + j == 4를 만족하는 요소들이 모두 1인 경우, 빙고 개수 추가
-        int cnt = 0;
+    int antiDiagonalCount(int[][] board, int cnt) {              // 역대각선  - i + j == 4를 만족하는 요소들이 모두 1인 경우, 빙고 개수 추가
         int bingo = 0;
         for (int i = 0; i < board.length; i++) {
             if (board[i][4 - i] != 1)
@@ -48,8 +48,7 @@ public class BingoTest {
 
         return bingo;
     }
-int diagonalCount(int[][] board) {                      // 대각선   -  i == j를 만족하는 요소들이 모두 1인 경우, 빙고 개수 추가
-        int cnt = 0;
+int diagonalCount(int[][] board, int cnt) {                      // 대각선   -  i == j를 만족하는 요소들이 모두 1인 경우, 빙고 개수 추가
         int bingo = 0;
         for (int i = 0; i < board.length; i++) {
             if(board[i][i] != 1)
@@ -64,8 +63,7 @@ int diagonalCount(int[][] board) {                      // 대각선   -  i == j
         return bingo;
     }
 
-    int garoCount(int[][] board) {                      // 가로 - i행 1열부터 i행 5열까지 비교 후, 모든 값이 1인 경우 빙고 개수 추가
-        int cnt = 0;
+    int garoCount(int[][] board, int cnt) {                      // 가로 - i행 1열부터 i행 5열까지 비교 후, 모든 값이 1인 경우 빙고 개수 추가
         int bingo = 0;
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
@@ -81,8 +79,7 @@ int diagonalCount(int[][] board) {                      // 대각선   -  i == j
         return bingo;
     }
 
-    int seroCount(int[][] board) {                      // 세로 - 1행 i열부터 5행 i열까지 비교 후, 모든 값이 1인 경우 빙고 개수 추가
-        int cnt = 0;
+    int seroCount(int[][] board, int cnt) {                      // 세로 - 1행 i열부터 5행 i열까지 비교 후, 모든 값이 1인 경우 빙고 개수 추가
         int bingo = 0;
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
@@ -148,6 +145,7 @@ int diagonalCount(int[][] board) {                      // 대각선   -  i == j
                 {1, 1, 0, 0, 1},
 
         };
+        System.out.println(bingoCnt(board));
         assertTrue(bingoCnt(board) == 6);
     }
 
