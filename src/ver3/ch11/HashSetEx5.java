@@ -54,7 +54,7 @@ public class HashSetEx5 {
         System.out.println("A ∩ B = " + setKyo);  // 한글 ㄷ을 누르고 한자키 MAC은 안 돼용 ㅠ
         System.out.println("A ∪ B = " + setHab);  // 한글 ㄷ을 누르고 한자키 MAC은 안 돼용 ㅠ
         System.out.println("A - B = " + setCha);
-        
+
 //      setA.retainAll(setB);  // 교집합. 공통된 요소만 남기고 삭제
 //      setA.addAll(setB);     // 합집합. setB의 모든 요소를 추가(중복 제외)
 //      setA.removeAll(setB);  // 차집합. setB와 공통 요소를 제거
