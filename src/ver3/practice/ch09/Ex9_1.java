@@ -46,7 +46,7 @@ class SutdaCard {
         // 2nd try
         // 1. 매개변수로 넘겨진 객체 obj가 Object타입이므로 num, isKwang값을 참조하기 위해서는 SutdaCard타입으로 형변환이 필요햐다.
         if(obj instanceof SutdaCard)
-            return this.num == ((SutdaCard)obj).num && this.isKwang == ((SutdaCard)obj).isKwang;
+            return num == ((SutdaCard)obj).num && isKwang == ((SutdaCard)obj).isKwang;
         else
             return false;  // 2. 타입이 SutdaCard가 아니면 값을 비교할 필요도 없다.
     }
