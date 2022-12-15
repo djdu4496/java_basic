@@ -27,18 +27,24 @@ public class Ex9_14 {
             } else if (input.equalsIgnoreCase("Q")) {
                 System.exit(0);
             }
-                Pattern p = Pattern.compile("(0\\d{1,2})-(\\d{3,4})-(\\d{4})");
-                for (int i = 0; i < phoneNumArr.length; i++) {
-                    Matcher m = p.matcher(phoneNumArr[i]);
-                    if(m.matches() && phoneNumArr[i].contains(input)) {
-                        list.add(phoneNumArr[i]);
-                    }
-                }
 
             /*
                 (1) 알맞은 코드를 넣어 완성하시오.
             */
 
+
+            for (int i = 0; i < phoneNumArr.length; i++) {
+                Pattern p = Pattern.compile("(0\\d{2})-(\\d{4})-(\\d{4})");
+                Matcher m = p.matcher(phoneNumArr[i]);
+
+                while(m.find()) {
+                    String[] arr = m.group().split("-", 3);
+                    String newPhoneNum = arr[0] + arr[1] + arr[2];
+                    if(newPhoneNum.contains(input))
+                        list.add(m.group());
+                }
+
+            }
 
             if (list.size() > 0) {
                 System.out.println(list);
