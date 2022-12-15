@@ -26,21 +26,15 @@ public class Ex9_10 {
             arr[i] = ' ';
         }
 
-        int i = 0;  // 문자열(str)을 복사할 위치를 저장하기 위한 변수
-        if(alignment == 0) { // '왼쪽 정렬'인 경우
-            for (int j = 0; j < str.length(); j++)  // str 각 문자들을 먼저 채운 후, 나머지는 공백문자
-                arr[i++] = str.charAt(j);
-        } else if(alignment == 1) {  // '가운데 정렬'인 경우
-            i = (length - str.length()) / 2; // 공백문자 절반, str 각 문자들을 먼저 채운 후, 나머지 절반은 공백문자
-                for (int j = 0; j < str.length(); j++)
-                    arr[i++] = str.charAt(j);
-        } else {  // '오른쪽 정렬'인 경우
-            // 공백문자로 채운후 마지막 length만큼 str 문자들로 채운다.
-            // 변환한 문자열의 길이(length)에서 변환할 문자열의 길이(String.length())를 빼면 공백문자의 개수가 나온다.
-            i = length - str.length();
-            for (int j = 0; j < str.length(); j++)
-                arr[i++] = str.charAt(j);
-        }
+        int pos = 0;  // 문자열(str)을 복사할 위치를 저장하기 위한 변수 - 왼쪽 정렬인 경우의 위치로 초기화
+        if(alignment == 1)   // '가운데 정렬'인 경우
+            pos = (length - str.length()) / 2; // 공백문자 절반, str 각 문자들을 먼저 채운 후, 나머지 절반은 공백문자
+        else if(alignment == 2)   // '오른쪽 정렬'인 경우
+            pos = length - str.length();
+
+        for (int i = 0; i < str.length(); i++)  // str 각 문자들을 먼저 채운 후, 나머지는 공백문자
+            arr[pos++] = str.charAt(i);
+
         return new String(arr);
     }
 
@@ -50,6 +44,12 @@ public class Ex9_10 {
         System.out.println(format(str, 10, 0));  // 왼쪽 정렬
         System.out.println(format(str, 10, 1));  // 가운데 정렬
         System.out.println(format(str, 10, 2));  // 오른쪽 정렬
+
+        str = "가나다라마";
+
+        System.out.println(format(str, 15, 0));
+        System.out.println(format(str, 15, 1));
+        System.out.println(format(str, 15, 2));
     }
 }
 
