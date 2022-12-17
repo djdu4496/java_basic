@@ -6,10 +6,12 @@ public class Ex9_1 {
     public static void main(String[] args) {
         SutdaCard c1 = new SutdaCard(3, true);
         SutdaCard c2 = new SutdaCard(3, true);
+        SutdaCard c3 = new SutdaCard(4, false);
 
         System.out.println("c1=" + c1);
         System.out.println("c2=" + c2);
         System.out.println("c1.equals(c2):" + c1.equals(c2));
+        System.out.println("c2.equals(c3):" + c2.equals(c3));
     }
 }
 
@@ -47,8 +49,7 @@ class SutdaCard {
         // 1. 매개변수로 넘겨진 객체 obj가 Object타입이므로 num, isKwang값을 참조하기 위해서는 SutdaCard타입으로 형변환이 필요햐다.
         if(obj instanceof SutdaCard)
             return num == ((SutdaCard)obj).num && isKwang == ((SutdaCard)obj).isKwang;
-        else
-            return false;  // 2. 타입이 SutdaCard가 아니면 값을 비교할 필요도 없다.
+        return false;
     }
 
     public String toString() {

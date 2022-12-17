@@ -16,13 +16,15 @@ public class Ex9_3 {
 //        fileName = fullPath.substring(14);
 
         // second try
-        String[] arr = fullPath.split("\\\\", 4);  // 검색 결과 : 정규표현식에서 역슬래시를 나타내려면 두 개("\\ + \\") 사용한다)
+//        String[] arr = fullPath.split("\\\\", 4);  // 검색 결과 : 정규표현식에서 역슬래시를 나타내려면 두 개("\\ + \\") 사용한다)
 //        for (int i = 0; i < arr.length; i++) {
 //            System.out.println("arr[" + i + "] : " + arr[i]);
 //        }
-        path = arr[0] + "\\" + arr[1] + "\\" +  arr[2];
-        fileName = arr[3];
-
+//        path = arr[0] + "\\" + arr[1] + "\\" +  arr[2];
+//        fileName = arr[3];
+        // third try - lastIndexOf() 사용
+        path = fullPath.substring(0, fullPath.lastIndexOf('P') - 1);
+        fileName = fullPath.substring(fullPath.lastIndexOf('\\') + 1);
 
         System.out.println("fullPath:" + fullPath);
         System.out.println("path:" + path);

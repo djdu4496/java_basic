@@ -34,8 +34,7 @@ class Point3D {
         // 1. obj가 Object타입이므로 x, y, z값을 참조하기 위해서는 Point3D타입으로 형변환이 필요하다.
         if(obj instanceof Point3D)
             return this.x == ((Point3D)obj).x && this.y == ((Point3D)obj).y && this.z == ((Point3D)obj).z;
-        else  // 2. 타입이 Point3D이 아니면 값을 비교할 필요도 없다.
-            return false;
+        return false; // 2. 타입이 Point3D이 아니면 값을 비교할 필요도 없다.
     }
 
     public String toString() {
