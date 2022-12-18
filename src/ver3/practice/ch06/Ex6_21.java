@@ -15,7 +15,7 @@ class MyTv {
 
     void turnOnOff() {
         // (1) isPowerOn의 값이 true면 false로, false면 true로 바꾼다.
-//        isPowerOn = isPowerOn ? true : false; // isPowerOn == true ? isPowerOn = false : isPowerOn = true;
+//      isPowerOn = isPowerOn ? true : false; // isPowerOn == true ? isPowerOn = false : isPowerOn = true;
         isPowerOn = !isPowerOn;
     }
 
@@ -24,15 +24,19 @@ class MyTv {
 //        if(volume < MAX_VOLUME) {
 //            volume++;
 //        }
-        volume = volume < MAX_VOLUME ? volume + 1 : volume;
+//        volume = volume < MAX_VOLUME ? volume + 1 : volume;
+        if(volume < MAX_VOLUME)
+            volume++;
     }
 
     void volumeDown() {
         // (3) volume의 값이 MIN_VOLUME보다 클 때만 값을 1감소시킨다.
-//        if(volume > MIN_VOLUME) {
-//            volume--;
-//        }
-        volume = volume > MIN_VOLUME ? volume - 1 : volume;
+//      if(volume > MIN_VOLUME) {
+//          volume--;
+//      }
+//      volume = volume > MIN_VOLUME ? volume - 1 : volume;  // second try
+        if(volume > MIN_VOLUME)                              // third try
+            volume--;
     }
 
     void channelUp() {
@@ -43,18 +47,26 @@ class MyTv {
 //        } else {
 //            channel++;
 //        }
-        channel = channel == MAX_CHANNEL ? MIN_CHANNEL : channel + 1;
+//        channel = channel == MAX_CHANNEL ? MIN_CHANNEL : channel + 1;
+        if(channel == MAX_CHANNEL)
+            channel = MIN_CHANNEL;
+        else
+            channel++;
     }
 
     void channelDown() {
         // (5) channel의 값을 1감소시킨다.
         // 만일 channel이 MIN_CHANNEL이면, channel의 값을 MAX_CHANNEL로 바꾼다.
-//        if(channel == MIN_CHANNEL) {
-//            channel = MAX_CHANNEL;
-//        } else {
-//            channel--;
-//        }
-        channel = channel == MIN_CHANNEL ? MAX_CHANNEL : channel - 1;
+//      if(channel == MIN_CHANNEL) {
+//          channel = MAX_CHANNEL;
+//      } else {
+//          channel--;
+//      }
+//      channel = channel == MIN_CHANNEL ? MAX_CHANNEL : channel - 1;
+        if(channel == MIN_CHANNEL)
+            channel = MAX_CHANNEL;
+        else
+            channel--;
     }
 }  // class MyTv
 

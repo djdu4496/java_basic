@@ -41,6 +41,11 @@ class Student {
     }
 
     float getAverage() {
-        return (int)(getTotal() / (float)3 * 10 + 0.5) / 10.0f;
+        return (int)(getTotal() / 3f * 10 + 0.5) / 10f;
     }
 }
+
+// [실행결과]
+// 이름 : 홍길동
+// 총점 : 236
+// 평균 : 78.7

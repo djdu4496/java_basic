@@ -18,8 +18,7 @@ class Student2 {
     int kor;
     int eng;
     int math;
-    int total;     // 총점
-    float average; // 평균
+
 
     Student2() {} // 기본 생성자
 
@@ -37,7 +36,7 @@ class Student2 {
     }
 
     float getAverage() {
-        return (int)(getTotal() / 3.0f * 10 + 0.5) / 10.0f;
+        return (int)(getTotal() / 3f * 10 + 0.5) / 10f;
     }
 
     String info() {

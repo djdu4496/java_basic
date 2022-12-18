@@ -12,6 +12,11 @@ package ver3.practice.ch06;
 
 class Ex6_20 {
     // (1) shuffle메서드를 작성하시오.
+    // 1. 유효성 검사
+    // 2. 카드 뒤섞기
+        // 2-1. 임의의 인덱스 얻기 - Math.random() 사용
+        // 2-2. 두 요소 교환하기
+    // 3. 변환된 배열 arr 반환
     static int[] shuffle(int[] arr) {
         // 1. 유효성 검사
         if(arr == null || arr.length == 0) return arr;

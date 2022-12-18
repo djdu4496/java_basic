@@ -14,7 +14,8 @@ class MyPoint2 {
     // 인스턴스메서드 getDistance를 작성하시오.
     double getDistance(int x1, int y1) {
         // 두 점 사이의 거리 == 루트((x좌표간 차이)^2 + (y좌표간 차이)^2)
-        return Math.sqrt(Math.pow(x1 - x, 2) + Math.pow(y1 - y, 2));
+//      return Math.sqrt(Math.pow(x1 - x, 2) + Math.pow(y1 - y, 2));
+        return Math.sqrt((x - x1) * (x - x1) + (y - y1) * (y - y1));
     }
 
 }

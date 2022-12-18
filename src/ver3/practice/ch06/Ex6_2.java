@@ -18,8 +18,7 @@ class SutdaCard {
 
 	// 1. 기본 생성자
 	SutdaCard() {
-		num = 1;
-		isKwang = true;
+		this(1, true);
 	}
 	// 2. 매개변수가 있는 생성자
 	SutdaCard(int num, boolean isKwang) {
