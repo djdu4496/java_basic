@@ -32,8 +32,7 @@ public class Ex3_8 {
 
         boolean result = d==(double)f2;    // 두 변수의 값이 일치하려면
                                            // 값 뿐만 아니라 변수의 타입이 일치해야 한다.
-                                           // 하지만, 두 변수의 타입이 일치하지 않기 때문에, f2를 (double)로 형변환해야 한다.
-                                           // 그 결과 두 변수값이 일치하게 된다.
+                                           // (암기) double타입을 float으로 형변환해야 한다.
 
         System.out.println("c=" + c);
         System.out.println("ch=" + ch);

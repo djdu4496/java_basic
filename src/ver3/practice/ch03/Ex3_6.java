@@ -13,6 +13,10 @@ public class Ex3_6 {
         // 문제 나누기
         // 1. num보다 크면서도 가장 가까운 10의 배수 구하기
         // 2. 위에서 구한 값에서 변수 num을 뺀 값 출력하기
-        System.out.println();
+
+        System.out.println((num - num % 10) + 10 - num);
     }
 }
+
+// [실행결과]
+// 6

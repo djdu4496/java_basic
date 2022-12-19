@@ -20,17 +20,22 @@ public class Ex5_13 {
 
             // (1) 알맞은 코드를 넣어 완성하시오.
             // char배열 question에 담긴 문자의 위치를 임의로 바꾼다.
-            int num = (int)(Math.random()*question.length + 1);  // 임의의 인덱스를 저장히기 위한 변수 num 선언 및 초기화
+//          int num = (int)(Math.random()*question.length + 1);  // 임의의 인덱스를 저장히기 위한 변수 num 선언 및 초기화
+//          for(int j = 0; j < question.length; j++) {
+//              char tmp = ' ';  // 임시변수 tmp 선언
+//
+//              tmp = question[num];  // question[num]과 question[j] 문자를 교환한다.
+//              question[num] = question[j];
+//              question[j] = tmp;
+//          }
+
+            // second try
             for(int j = 0; j < question.length; j++) {
-                char tmp = ' ';  // 임시변수 tmp 선언
-                
-                tmp = question[num];  // question[num]과 question[j] 문자를 교환한다.
-                question[num] = question[j];
-                question[j] = tmp;
+                int idx = (int)(Math.random()*question.length);  // 임의의 인덱스를 저장히기 위한 변수 num 선언 및 초기화
+                char tmp = question[i];  // question[num]과 question[j] 문자를 교환한다.
+                question[i] = question[idx];
+                question[idx] = tmp;
             }
-
-
-
 
             System.out.printf("Q%d. %s의 정답을 입력하세요.>", i + 1, new String(question));
 
