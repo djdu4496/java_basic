@@ -72,9 +72,11 @@ public class MyVectorTest {
 
         // second try                                          // Test 1. toString()값과 직접 객체를 이은 값이 일치하는지 여부 테스트
         String str = "[";                                          // 1. 문자열 str 선언 및 "["으로 초기화
-        for (int i = 0; i < v.objArr.length; i++) {                // 2. 배열 objArr의 길이만큼 반복문 수행
+        for (int i = 0; i < v.objArr.length; i++)                  // 2. 배열 objArr의 길이만큼 반복문 수행
             v.add(i + 1 + "");                                     // 3. add()를 사용하여 배열 objArr의 길이만큼 객체를 저장
-            if(i == v.objArr.length - 1)                           // 4. 배열 objArr의 마지막 요소인 경우
+
+        for (int i = 0; i < v.size; i++) {
+            if(i == v.size - 1)                                    // 4. 배열 objArr의 마지막 요소인 경우
                 str += i + 1 + "";                                     // 4-1. ","를 포함하지 않고 str에 add()로 저장한 객체를 더해 다시 저장한다.
             else
                 str += i + 1 + ",";                                    // 4-2. ","를 포함하여 str에 add()로 저장한 객체를 더해 다시 저장한다.

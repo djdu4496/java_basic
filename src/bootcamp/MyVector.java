@@ -49,9 +49,8 @@ public class MyVector {
         if(size==capacity) {                                        // 1-2. 저장공간이 없을 때 - 배열을 복사하여 저장공간을 확보한다.
             capacity = objArr.length * 2;                                // 0. MyVector의 용량을 2배로 변경
             Object[] objArr2 = new Object[capacity];                     // 1. 길이가 큰 배열 생성
-            for (int i = 0; i < objArr.length; i++) {
-                objArr2[i] = objArr[i];
-            }                                                            // 2. 기존 배열 내용 복사
+            for (int i = 0; i < objArr.length; i++)
+                objArr2[i] = objArr[i];                                  // 2. 기존 배열 내용 복사
             objArr = objArr2;                                            // 3. 참조 변경
         }
 
@@ -60,10 +59,9 @@ public class MyVector {
 
     // Q2-5. MyVector클래스의 객체배열 objArr에 저장된 객체 반환
     Object get(int index) {
-        if(index < 0 || index >= size) {                            // 1. 유효성 검사 - index가 0보다 작거나 size보다 크거나 같을 때
+        if(index < 0 || index >= size)                              // 1. 유효성 검사 - index가 0보다 작거나 size보다 크거나 같을 때
             throw new ArrayIndexOutOfBoundsException("index : " + index);  // 예외를 발생시킨다.
-        }
-        return objArr[index];                                       // 2. objArr의 index번째 요소 반환
+        return objArr[index];                                       // 2. 배열 objArr의 index번째 요소 반환
     }
 
     // Q2-6. MyVector클래스의 객체배열 objArr에 저장된 모든 객체를 문자열로 이어서 반환
@@ -79,7 +77,7 @@ public class MyVector {
         // second try
         String str = "";                                            // 1. 문자열 저장 위한 변수 str 선언 및 빈 문자열로 초기화
         for (int i = 0; i < objArr.length; i++) {                   // 2. 배열 objArr의 길이만큼 반복문 수행
-            if(i == objArr.length - 1)                                  // 2-1. objArr의 마지막 요소일 경우
+            if(i == size - 1)                                           // 2-1. objArr의 마지막 요소일 경우
                 str = str + objArr[i];                                      // ","를 포함하지 않고 str에 add()로 저장한 객체를 더해 다시 저장한다.
             else                                                        // 2-2. objArr의 마지막 요소가 아닌 경우
                 str = str + objArr[i] + ",";                                // ","를 포함하여 str에 add()로 저장한 객체를 더해 다시 저장한다.
@@ -139,10 +137,9 @@ public class MyVector {
 //      return -1;                                                  // 4. 일치하는 객체가 존재하지 않을 경우 -1 반환
 
         // fourth try
-        for (int i = 0; i < size; i++) {                            // 1. 배열 objArr의 길이만큼 반복문 수행 - i < objArr.length -> size로 변경
-            if(objArr[i] == null || obj.equals(objArr[i])) {        // 2. 객체 obj가 null이거나, objArr[i]와 일치하는 경우
+        for (int i = 0; i < size; i++) {                            // 1. size의 길이만큼 반복문 수행 - 'i < objArr.length' -> 'i < size'로 변경
+            if(objArr[i] == null || obj.equals(objArr[i]))          // 2. 객체 obj가 null이거나, objArr[i]와 일치하는 경우
                 return i;                                           // 3. 해당 index를 반환한다.
-            }
         }
         return -1;                                                  // 4. 일치하는 객체가 존재하지 않을 경우 -1 반환
     }
@@ -171,16 +168,14 @@ public class MyVector {
 //      }
 
         // third try
-        if (indexOf(obj) == -1)                                          // 1. 매개변수로 받은 객체의 인덱스가 존재하지 않을 경우
+        if (indexOf(obj) == -1)                                      // 1. 매개변수로 받은 객체의 인덱스가 존재하지 않을 경우
             return false;                                                   // 1-1. false 반환
-        else {                                                           // 2. 매개변수로 받은 객체의 인덱스가 존재할 경우
-            if(indexOf(obj) != size - 1)                                    // 2-1. 마지막 데이터가 아닌 경우
-                System.arraycopy(objArr, indexOf(obj) + 1, objArr, indexOf(obj), size - indexOf(obj) - 1);  // 2-1. 삭제할 데이터 아래의 데이터를 한 칸씩 위로 복사해서 삭제할 데이터를 덮어쓴다.
-            objArr[size - 1] = null;                                     // 3. 마지막 객체 null로 변경
-            size--;                                                      // 4. 데이터 개수가 줄었기 때문에 size 1 감소 처리
-            return true;                                                    // 2-2. true 반환
-        }
-
+                                                                     // 2. 매개변수로 받은 객체의 인덱스가 존재할 경우
+        if(indexOf(obj) != size - 1)                                    // 2-1. 마지막 데이터가 아닌 경우 - 삭제할 데이터 아래의 데이터를 한 칸씩 위로 복사해서 삭제할 데이터를 덮어쓴다.
+            System.arraycopy(objArr, indexOf(obj) + 1, objArr, indexOf(obj), size - indexOf(obj) - 1);
+        objArr[size - 1] = null;                                     // 3. 마지막 객체 null로 변경
+        size--;                                                      // 4. 데이터 개수가 줄었기 때문에 size 1 감소 처리
+        return true;                                                    // 2-2. true 반환
     }
 
 }
