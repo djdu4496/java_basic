@@ -1,4 +1,4 @@
-package ver3.practice.ch12;
+package ver3.practice.ch12.ex12_2;
 
 // 지네릭 메서드 makeJuice()가 아래와 같이 정의되어 있을 때, 이 메서드를 올바르게 호출한 문장을 모두 고르시오.
 // (Apple과 Grape는 Fruit의 자손이라고 가정하자.)
