@@ -1,4 +1,4 @@
-package ver3.ch12.FruitBoxEx4;
+package ver3.ch12.fruitBoxEx4;
 
 import java.util.*;
 

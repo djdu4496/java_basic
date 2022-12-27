@@ -1,4 +1,4 @@
-package ver3.ch12.FruitBoxEx1;
+package ver3.ch12.fruitBoxEx1;
 
 import java.util.ArrayList;
 
