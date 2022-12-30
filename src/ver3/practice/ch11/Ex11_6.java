@@ -5,6 +5,8 @@ package ver3.practice.ch11;
 // 해당 범위에 속한 학생의 수를 반환하는 getGroupCount()를 완성하라.
 // [Hint] TreeSet의 subSet(Object from, Object to)를 사용하라.
 
+import com.sun.source.tree.Tree;
+
 import java.util.*;
 
 class Student2 implements Comparable {
@@ -62,21 +64,71 @@ class Ex11_6 {
 //        System.out.println(tset);
 //        return tset.subSet(from, to).size();
 
-        Student2 s1 = new Student2("", 0, 0, from, from, from);
-        Student2 s2 = new Student2("", 0, 0, to, to, to);
+//
+//        SortedSet tree = tset.subSet(from, to);
+//
+//        // 1. 객체 배열이니까 객체에서 평균 뽑는다. 그걸 뽑아서 새로운 treeset 만들어서 add \
+//        // 객체 배열에서 학생 객체 하나 뽑기
+//        //[60, 70] [{name: "홍길동", ban: },{}]
+////        System.out.println("test"+ tset.);
+//        ArrayList arr = new ArrayList();
+//        // set에 들어 있는 객체에서 평균만 뽑아보자.
+//        Iterator it = tset.iterator();
+//        while(it.hasNext()) {
+//            float average = ((Student2) it.next()).getAverage();
+//            arr.add(average);
+//        }
 
-        return tset.subSet(s1, s2).size();
+//        SortedSet ts = new TreeSet();    // 모든 학생의 평균 값을 저장할 TreeSet 생성
+//        Iterator it2 = tset.iterator();  // 값을 불러오기 위해 iterator() 처리
+//        while(it2.hasNext()) {           // 다음 값이 존재하는 경우,
+//            float average = ((Student2) it2.next()).getAverage();  // 평균 추출
+//            ts.add(Math.round(average));                           // TreeSet에 저장(int형으로 형변환 위해 Math.round()처리)
+//        }
+
+//        System.out.println(":: "+ts.subSet(from, to).size());
+//        return ts.subSet(from, to).size();
+
+////        System.out.println(arr.toString());
+        // 배열까지 만들었는데(심지어 오름차순 정렬됨)
+//        for (int i = 0; i < arr.size(); i++) {
+//            if(((Student2)arr.get(i)).getAverage() >= from
+//            && ((Student2)arr.get(i)).getAverage() < to) {
+//                // count를 해야 하나? 근데 subSet()을 쓸 곳이 없다...ㅠ
+//            }
+//        }
+        // 풀이 1
+        //     -( 60점인 학생, 70점인 학생)을 만들어서 부분집합을 만든다.
+        //     60점 학생, 70점 학생을 임의로? 더미 데이터를? 만든다.
+        // ->  평균 from점 학생, to점 학생을 임의로 만들어서 부분집합의 범위를 만든다.
+        // ->  subSet(from점 학생, to점 학생)으로 비교한다.  - 평균이 60점, 70점으로 만들어야 하기 때문에 국.영.수 모두 그 점수로 통일한다.
+        // ->  tset.subSet(new Student2("바이든",1 , 1, 60, 60, 60 ), new Student2("트럼프", 1, 1, 70, 70, 70));
+        // ->  tset.subSet(new Student2("바이든",1 , 1, from, from, from), new Student2("트럼프", 1, 1, to, to, to));
+//        return tset.subSet(new Student2("바이든",1 , 1, from, from, from), new Student2("트럼프", 1, 1, to, to, to)).size();
+
+        // 풀이 2
+        TreeSet ts = new TreeSet();                               // 모든 학생의 평균 값을 저장할 TreeSet 생성
+        Iterator it = tset.iterator();                            // 값을 불러오기 위해 iterator() 처리
+        while(it.hasNext()) {                                     // 다음 값이 존재하는 경우,
+            float average = ((Student2) it.next()).getAverage();  // 평균 추출
+            ts.add(Math.round(average));                           // TreeSet에 저장(int형으로 형변환 위해 Math.round()처리)
+        }
+//        System.out.println(ts.toString());
+//        System.out.println(":: "+ts.subSet(from, to).size()); 값 나오는지 찍어봄 - 조교님 구분자 팁도 참고합시다
+        return ts.subSet(from, to).size();
+
     }
     public static void main(String[] args) {
+
         TreeSet set = new TreeSet(new Comparator() {
             public int compare(Object o1, Object o2) {
                 /*
                     (2) 알맞은 코드를 넣어 완성하시오.
                 */
-                if(o1 instanceof Student2 && o2 instanceof Student2) {
-                    float score1 = ((Student2)o1).getAverage();
-                    float score2 =((Student2)o2).getAverage();
-                    return score1 < score2 ? -1 : (score1 == score2 ? 0 : 1) ;
+                if(o1 instanceof Student2 && o2 instanceof Student2) {                  // 1. 유효성 검사 - 두 객체의 Student로 형변환 가능 여부 확인
+                    float score1 = ((Student2)o1).getAverage();                         // 2. 형 변환
+                    float score2 =((Student2)o2).getAverage();                          // 3. getAverage() 호출
+                    return score1 < score2 ? -1 : (score1 == score2 ? 0 : 1) ;          // 오른쪽 객체가 더 크면 -1 반환, 같으면 1 반환, 왼쪽 객체가 크면 1 반환
                 }
                 return -1;
             }
@@ -93,6 +145,8 @@ class Ex11_6 {
         System.out.println("[70~79] :"+getGroupCount(set,70,80));
         System.out.println("[80~89] :"+getGroupCount(set,80,90));
         System.out.println("[90~100] :"+getGroupCount(set,90,101));
+
+
     }
 }
 

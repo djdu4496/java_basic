@@ -8,7 +8,7 @@ import java.util.*;
 
 public class Ex11_10 {
     public static void main(String[] args) {
-        Set set = new HashSet();
+        LinkedHashSet set = new LinkedHashSet();
 
         int[][] board = new int[5][5];
         for(int i=0; set.size() < 25; i++) {
@@ -18,9 +18,9 @@ public class Ex11_10 {
         // 2. Collections.shuffle()을 사용하여 list의 저장된 데이터들을 섞는다.
         // 3. list에 선언되어 있는 iterator()를 호출하여 Iterator를 구현한 객체를 얻어서 사용한다.
 
-        ArrayList list = new ArrayList(set);                        // 1.
-        Collections.shuffle(list);                                  // 2.
-        Iterator it = list.iterator();                              // 3.
+//        ArrayList list = new ArrayList(set);                        // 1.
+//        Collections.shuffle(list);                                  // 2.
+        Iterator it = set.iterator();                              // 3.
         for(int i=0; i < board.length; i++) {
             for(int j=0; j < board[i].length; j++) {
                 board[i][j] = Integer.parseInt((String)it.next());

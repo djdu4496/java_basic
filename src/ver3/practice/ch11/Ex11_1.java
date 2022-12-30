@@ -37,8 +37,9 @@ public class Ex11_1 {
         // 해당 요소가 list1이 가지고 있는 요소라면
         // 교집합 kyo에 해당 요소를 추가해준다.
         // 2트
-        // 1. kyo에 list1의 요소와 동일한 요소들을 전부 더한다.
-        // 2. kyo에서 list2와 겹치는 부분만 남기고 전부 삭제한다.
+        // 1. 교집합
+            // 1-1. kyo에 list1의 요소들을 전부 더한다.
+            // 1-2. kyo에서 list2와 겹치는 부분만 남기고 전부 삭제한다.
 
         kyo.addAll(list1);
         kyo.retainAll(list2);
@@ -57,10 +58,15 @@ public class Ex11_1 {
 
         // 3.
         // 1. hap에 list1의 모든 요소를 더해준다.
-        // 2. list1에서 kyo를 빼주어 차집합을 hap에 저장한다.
+        // 2. hap에서 kyo에 저장된 모든 요소를 뺀다.
         // 3. list1 - list2 차집합에 list2를 더하면 두 집합의 합집합을 얻을 수 있다.
-        hap.addAll(list1);
-        hap.removeAll(kyo);
+//        hap.addAll(list1);
+//        hap.removeAll(kyo);
+//        hap.addAll(list2);
+        // 2트
+        // 1. hap에 list1와 list2의 차집합 cha의 요소를 모두 저장한다.
+        // 2. hap에 list2 요소를 모두 저장한다.
+        hap.addAll(cha);
         hap.addAll(list2);
 
         System.out.println("list1="+list1);

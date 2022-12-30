@@ -71,14 +71,22 @@ class Exercise11_8 {
                         (실행결과 참고)
                     1.3 현재 총점과 등수를 이전총점(prevTotal)과 이전등수(prevRank)에 저장한다.
         */
+        // 3. 전교 등수 계산 - for문 사용
         for(int i = 0; i < length; i++) {
             Student4 s = (Student4)list.get(i);     // 1.
 
-            if(s.total == prevTotal)                // 1.1 총점(total)이 이전총점(prevTotal)과 같으면
+            // 문제를 쉽게 만든다.
+            // 1 번째 학생 1등 == i + 1 (i == 0)
+            // 2 번째 학생 2등 == i + 1 (i == 1)
+            // 3 번째 학생 3등 == i + 1 (i == 2)
+            // 4 번째 학생 3등 != i + 1 (i == 3)  // 얘의 경우를 따로 if문 처리
+            // 5 번째 학생 5등 == i + 1 (i == 5)
+            if(s.total == prevTotal)                  // 1.1 총점(total)이 이전총점(prevTotal)과 같으면
                 s.schoolRank = prevRank;                // 이전 등수(prevRank)를 등수(schoolRank)로 한다.
-            else                                    // 1.2 총점이 서로 다르면,
-                s.schoolRank = i + 1;                   // 등수(schoolRank)의 값을 알맞게 계산해서 저장한다.
-                                                        // 이전에 동점자 였다면, 그 다음 등수는 동점자의 수를 고려해야 한다.
+            else                                     // 1.2 총점이 서로 다르면,
+                s.schoolRank = i + 1;
+            //  s.schoolRank = (i == 0) ? 1 : prevRank + 1; 동일 순위의 레코드 존재 시 후순위를 넘어가지 않는 레코드 순위를 계산(DENSE_RANK())
+            // 4. 작업 완료 후, 현 학생 정보를 이전 학생 정보로 변환
             prevTotal = s.total;                    // 1.3 현재 총점과 등수를 이전총점(prevTotal)과 이전등수(prevRank)에 저장한다.
             prevRank = s.schoolRank;
         }

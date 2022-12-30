@@ -1,6 +1,6 @@
 package ver3.practice.ch11;
 
-// 문제 11-8의 Student클래스에 반등(classRank)를 저장하기 위한 인스턴스변수를 추가하였다.
+// 문제 11-8의 Student클래스에 반등수(classRank)를 저장하기 위한 인스턴스변수를 추가하였다.
 // 반등수를 계산하고 반과 반등수로 오름차순 정렬하여 결과를 출력하시오.
 // (1)~(2)에 알맞은 코드를 넣어 완성하시오.
 
@@ -62,11 +62,18 @@ class ClassTotalComparator implements Comparator {
         // 2. 형변환
         // 3. 기본정렬기준 반환
         if(o1 instanceof Student5 && o2 instanceof Student5) {
+            // 반별 총점 기준
+//            int ban1 = ((Student5)o1).ban;
+//            int ban2 = ((Student5)o2).ban;
+//            int cRank1 = ((Student5)o1).classRank;
+//            int cRank2 = ((Student5)o2).classRank;
+//            return ban1 < ban2 ? -1 : (ban1 == ban2 ? (cRank1 > cRank2 ? -1 : (cRank1 == cRank2 ? 0 : 1)) : 1);
             int ban1 = ((Student5)o1).ban;
             int ban2 = ((Student5)o2).ban;
-            int total1 = ((Student5)o1).total;
-            int total2 = ((Student5)o2).total;
-            return ban1 < ban2 ? -1 : (ban1 == ban2 ? (total1 > total2 ? -1 : (total1 == total2 ? 0 : 1)) : 1);
+            int total1 = ((Student5)o1).getTotal();
+            int total2 = ((Student5)o2).getTotal();
+            return ban1 < ban2 ? -1 : (total1 > total2 ? -1 : (total1 == total2 ? 0 : 1));
+
         }
         return -1;
     }
@@ -92,23 +99,30 @@ class Exercise11_9 {
                     1.4 현재 반과 총점과 등수를 이전 반(prevBan),
                         이전 총점(prevTotal), 이전 등수(prevRank)에 저장한다.
         */
-        for (int i = 0, n = 0; i < length; i++, n++) {
+
+        for (int i = 0; i < length; i++) {
             Student5 s = (Student5)list.get(i);
-            if(s.ban != prevBan) {
-                prevRank = -1;
-                prevTotal = -1;
-                n = 0;
+            if(s.ban != prevBan) {                  // 1. 현 학생의 반과 이전 학생의 반이 다른 경우
+                prevRank = -1;                          // 1-1. 이전 등수 초기화
+                prevTotal = -1;                         // 1-2. 이전 총점 초기화
+                s.classRank = 1;                        // 1-3. 현재 학생 등수 1등으로 초기화(내림차순)
+            } else {                                // 2. 두 학생이 같은 반인 경우
+                if(s.getTotal() == prevTotal)           // 2-1. 두 학생의 총점이 같다면
+                    s.classRank = prevRank;                 // 현 학생의 등수에 이전 학생의 등수를 저장한다.
+                else                                    // 2-2. 두 학생의 총점이 다를 경우
+                    s.classRank = ++prevRank;               // 현 학생의 등수에 이전 학생의 등수 + 1을 저장한다.
             }
 
-            if(s.total == prevTotal)
-                prevRank = s.classRank;
-            else
-                s.classRank = n + 1;
-
-            prevBan =s.ban;
-            prevTotal = s.total;
-            prevRank = s.schoolRank;
+            prevBan = s.ban;
+            prevTotal = s.getTotal();
+            prevRank = s.classRank;
         }
+        // i  -> i + 1
+        // 0  ->   1
+        // 1  ->   2
+        // 2  ->   3
+        // 0  ->   1
+        // 1  ->   2
     } // public static void calculateClassRank(List list) {
 
     public static void calculateSchoolRank(List list) {
@@ -137,6 +151,9 @@ class Exercise11_9 {
         list.add(new Student5("홍길동",1,3,100,100,100));
         list.add(new Student5("남궁성",1,1,90,70,80));
         list.add(new Student5("김자바",1,2,80,80,90));
+        list.add(new Student5("박자스",2,2,85,50,90));
+        list.add(new Student5("유재석",2,2,85,95,90));
+        list.add(new Student5("박명수",2,2,100,100,100));
         calculateSchoolRank(list);
         calculateClassRank(list);
         Iterator it = list.iterator();
