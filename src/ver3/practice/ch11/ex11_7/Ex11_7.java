@@ -1,18 +1,18 @@
-package ver3.practice.ch11;
+package ver3.practice.ch11.ex11_7;
 
 // 다음에 제시된 BanNoAscending클래스를 완성하여 ArrayList에 담긴 Student인스턴스들이,
 // 반(ban)과 번호(no)로 오름차순 정렬되게 하시오.(반이 같은 경우 번호를 비교해서 정렬한다.)
 
 import java.util.*;
 
-class Student3 {
+class Student {
     String name;
     int ban;
     int no;
     int kor;
     int eng;
     int math;
-    Student3(String name, int ban, int no, int kor, int eng, int math) {
+    Student(String name, int ban, int no, int kor, int eng, int math) {
         this.name = name;
         this.ban = ban;
         this.no = no;
@@ -47,11 +47,11 @@ class BanNoAscending implements Comparator {
         // 1. 형변환 검사
         // 2. 형변환
         // 3. 비교기준 반환
-        if(o1 instanceof Student3 && o2 instanceof Student3) {
-            int ban1 = ((Student3)o1).ban;
-            int ban2 = ((Student3)o2).ban;
-            int no1 =  ((Student3)o1).no;
-            int no2 =  ((Student3)o2).no;
+        if(o1 instanceof Student && o2 instanceof Student) {
+            int ban1 = ((Student)o1).ban;
+            int ban2 = ((Student)o2).ban;
+            int no1 =  ((Student)o1).no;
+            int no2 =  ((Student)o2).no;
             return ban1 < ban2 ? -1 : (ban1 == ban2 ? (no1 < no2 ? -1 : (no1 == no2 ? 0 : 1)) : 1);
         }
         return -1;
@@ -60,11 +60,11 @@ class BanNoAscending implements Comparator {
 public class Ex11_7 {
     public static void main(String[] args) {
         ArrayList list = new ArrayList();
-        list.add(new Student3("이자바",2,1,70,90,70));
-        list.add(new Student3("안자바",2,2,60,100,80));
-        list.add(new Student3("홍길동",1,3,100,100,100));
-        list.add(new Student3("남궁성",1,1,90,70,80));
-        list.add(new Student3("김자바",1,2,80,80,90));
+        list.add(new Student("이자바",2,1,70,90,70));
+        list.add(new Student("안자바",2,2,60,100,80));
+        list.add(new Student("홍길동",1,3,100,100,100));
+        list.add(new Student("남궁성",1,1,90,70,80));
+        list.add(new Student("김자바",1,2,80,80,90));
         Collections.sort(list, new BanNoAscending());
         Iterator it = list.iterator();
         while(it.hasNext())

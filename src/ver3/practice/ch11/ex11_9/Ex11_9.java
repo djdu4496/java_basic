@@ -1,4 +1,4 @@
-package ver3.practice.ch11;
+package ver3.practice.ch11.ex11_9;
 
 // 문제 11-8의 Student클래스에 반등수(classRank)를 저장하기 위한 인스턴스변수를 추가하였다.
 // 반등수를 계산하고 반과 반등수로 오름차순 정렬하여 결과를 출력하시오.
@@ -6,7 +6,7 @@ package ver3.practice.ch11;
 
 import java.util.*;
 
-class Student5 implements Comparable {
+class Student implements Comparable {
     String name;
     int ban;
     int no;
@@ -16,7 +16,7 @@ class Student5 implements Comparable {
     int total;
     int schoolRank; // 전교등수
     int classRank; // 반등수
-    Student5(String name, int ban, int no, int kor, int eng, int math) {
+    Student(String name, int ban, int no, int kor, int eng, int math) {
         this.name = name;
         this.ban = ban;
         this.no = no;
@@ -32,8 +32,8 @@ class Student5 implements Comparable {
         return (int)((getTotal()/ 3f)*10+0.5)/10f;
     }
     public int compareTo(Object o) {
-        if(o instanceof Student5) {
-            Student5 tmp = (Student5)o;
+        if(o instanceof Student) {
+            Student tmp = (Student)o;
             return tmp.total - this.total;
         } else {
             return -1;
@@ -61,17 +61,17 @@ class ClassTotalComparator implements Comparator {
         // 1. 형변환 가능 여부 확인
         // 2. 형변환
         // 3. 기본정렬기준 반환
-        if(o1 instanceof Student5 && o2 instanceof Student5) {
+        if(o1 instanceof Student && o2 instanceof Student) {
             // 반별 총점 기준
 //            int ban1 = ((Student5)o1).ban;
 //            int ban2 = ((Student5)o2).ban;
 //            int cRank1 = ((Student5)o1).classRank;
 //            int cRank2 = ((Student5)o2).classRank;
 //            return ban1 < ban2 ? -1 : (ban1 == ban2 ? (cRank1 > cRank2 ? -1 : (cRank1 == cRank2 ? 0 : 1)) : 1);
-            int ban1 = ((Student5)o1).ban;
-            int ban2 = ((Student5)o2).ban;
-            int total1 = ((Student5)o1).getTotal();
-            int total2 = ((Student5)o2).getTotal();
+            int ban1 = ((Student)o1).ban;
+            int ban2 = ((Student)o2).ban;
+            int total1 = ((Student)o1).getTotal();
+            int total2 = ((Student)o2).getTotal();
             return ban1 < ban2 ? -1 : (total1 > total2 ? -1 : (total1 == total2 ? 0 : 1));
 
         }
@@ -101,7 +101,7 @@ class Exercise11_9 {
         */
 
         for (int i = 0; i < length; i++) {
-            Student5 s = (Student5)list.get(i);
+            Student s = (Student)list.get(i);
             if(s.ban != prevBan) {                  // 1. 현 학생의 반과 이전 학생의 반이 다른 경우
                 prevRank = -1;                          // 1-1. 이전 등수 초기화
                 prevTotal = -1;                         // 1-2. 이전 총점 초기화
@@ -133,7 +133,7 @@ class Exercise11_9 {
         int length = list.size();
 
         for (int i = 0; i < length; i++) {
-            Student5 s = (Student5)list.get(i);     // 1.
+            Student s = (Student)list.get(i);     // 1.
 
             if (s.total == prevTotal)                // 1.1 총점(total)이 이전총점(prevTotal)과 같으면
                 s.schoolRank = prevRank;                // 이전 등수(prevRank)를 등수(schoolRank)로 한다.
@@ -146,14 +146,14 @@ class Exercise11_9 {
     }
     public static void main(String[] args) {
         ArrayList list = new ArrayList();
-        list.add(new Student5("이자바",2,1,70,90,70));
-        list.add(new Student5("안자바",2,2,60,100,80));
-        list.add(new Student5("홍길동",1,3,100,100,100));
-        list.add(new Student5("남궁성",1,1,90,70,80));
-        list.add(new Student5("김자바",1,2,80,80,90));
-        list.add(new Student5("박자스",2,2,85,50,90));
-        list.add(new Student5("유재석",2,2,85,95,90));
-        list.add(new Student5("박명수",2,2,100,100,100));
+        list.add(new Student("이자바",2,1,70,90,70));
+        list.add(new Student("안자바",2,2,60,100,80));
+        list.add(new Student("홍길동",1,3,100,100,100));
+        list.add(new Student("남궁성",1,1,90,70,80));
+        list.add(new Student("김자바",1,2,80,80,90));
+        list.add(new Student("박자스",2,2,85,50,90));
+        list.add(new Student("유재석",2,2,85,95,90));
+        list.add(new Student("박명수",2,2,100,100,100));
         calculateSchoolRank(list);
         calculateClassRank(list);
         Iterator it = list.iterator();

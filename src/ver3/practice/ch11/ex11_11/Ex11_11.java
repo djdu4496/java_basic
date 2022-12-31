@@ -1,4 +1,4 @@
-package ver3.practice.ch11;
+package ver3.practice.ch11.ex11_11;
 // 다음은 SutdaCard클래스를 HashSet에 저장하고 출력하는 예제이다.
 // HashSet에 중복된 카드가 저장되지 않도록 SutdaCard의 hashCode()를 알맞게 오버라이딩하시오.
 // [Hint] String클래스의 hashCode()를 사용하라.

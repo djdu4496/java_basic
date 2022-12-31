@@ -1,22 +1,20 @@
-package ver3.practice.ch11;
+package ver3.practice.ch11.ex11_6;
 
 // 다음의 코드는 성적평균의 범위별로 학생 수를 세기 위한 것이다.
 // TreeSet이 학생들의 평균을 기준으로 정렬하도록 compare(Object o1, Object o2)와 평균점수의 범위를 주면
 // 해당 범위에 속한 학생의 수를 반환하는 getGroupCount()를 완성하라.
 // [Hint] TreeSet의 subSet(Object from, Object to)를 사용하라.
 
-import com.sun.source.tree.Tree;
-
 import java.util.*;
 
-class Student2 implements Comparable {
+class Student implements Comparable {
     String name;
     int ban;
     int no;
     int kor;
     int eng;
     int math;
-    Student2(String name, int ban, int no, int kor, int eng, int math) {
+    Student(String name, int ban, int no, int kor, int eng, int math) {
         this.name = name;
         this.ban = ban;
         this.no = no;
@@ -42,8 +40,8 @@ class Student2 implements Comparable {
                 ;
     }
     public int compareTo(Object o) {
-        if(o instanceof Student2) {
-            Student2 tmp = (Student2)o;
+        if(o instanceof Student) {
+            Student tmp = (Student)o;
             return name.compareTo(tmp.name);
         } else {
             return -1;
@@ -110,7 +108,7 @@ class Ex11_6 {
         TreeSet ts = new TreeSet();                               // 모든 학생의 평균 값을 저장할 TreeSet 생성
         Iterator it = tset.iterator();                            // 값을 불러오기 위해 iterator() 처리
         while(it.hasNext()) {                                     // 다음 값이 존재하는 경우,
-            float average = ((Student2) it.next()).getAverage();  // 평균 추출
+            float average = ((Student) it.next()).getAverage();  // 평균 추출
             ts.add(Math.round(average));                           // TreeSet에 저장(int형으로 형변환 위해 Math.round()처리)
         }
 //        System.out.println(ts.toString());
@@ -125,19 +123,19 @@ class Ex11_6 {
                 /*
                     (2) 알맞은 코드를 넣어 완성하시오.
                 */
-                if(o1 instanceof Student2 && o2 instanceof Student2) {                  // 1. 유효성 검사 - 두 객체의 Student로 형변환 가능 여부 확인
-                    float score1 = ((Student2)o1).getAverage();                         // 2. 형 변환
-                    float score2 =((Student2)o2).getAverage();                          // 3. getAverage() 호출
+                if(o1 instanceof Student && o2 instanceof Student) {                  // 1. 유효성 검사 - 두 객체의 Student로 형변환 가능 여부 확인
+                    float score1 = ((Student)o1).getAverage();                         // 2. 형 변환
+                    float score2 =((Student)o2).getAverage();                          // 3. getAverage() 호출
                     return score1 < score2 ? -1 : (score1 == score2 ? 0 : 1) ;          // 오른쪽 객체가 더 크면 -1 반환, 같으면 1 반환, 왼쪽 객체가 크면 1 반환
                 }
                 return -1;
             }
         });
-        set.add(new Student2("홍길동",1,1,100,100,100));
-        set.add(new Student2("남궁성",1,2,90,70,80));
-        set.add(new Student2("김자바",1,3,80,80,90));
-        set.add(new Student2("이자바",1,4,70,90,70));
-        set.add(new Student2("안자바",1,5,60,100,80));
+        set.add(new Student("홍길동",1,1,100,100,100));
+        set.add(new Student("남궁성",1,2,90,70,80));
+        set.add(new Student("김자바",1,3,80,80,90));
+        set.add(new Student("이자바",1,4,70,90,70));
+        set.add(new Student("안자바",1,5,60,100,80));
         Iterator it = set.iterator();
         while(it.hasNext())
             System.out.println(it.next());

@@ -1,4 +1,4 @@
-package ver3.practice.ch11;
+package ver3.practice.ch11.ex11_12;
 // 다음은 섯다게임에서 카드의 순위를 결정하는 등급목록(족보)이다.
 // HashMap에 등급과 점수를 저장하는 registerJokbo()와 게임참가자의 점수를 계산해서 반환하는 getPoint()를 완성하시오.
 // [참고] 섯다게임은 두 장의 카드의 숫자를 더한 값을 10으로 나눈 나머지가 높은 쪽이 이기는 게임이다.
@@ -41,7 +41,7 @@ class SutdaDeck
     // 생각정리 :
         // 1. 족보 분류
             // 1-1. 두 카드의 숫자가 동일한 경우(땡)
-            // 1-2. 두 카드이 숫자가 특정 조합인 경우(순서x)
+            // 1-2. 두 카드의 숫자가 특정 조합인 경우(순서x)
                 // (1) (1, 2)
                 // (2) (1, 4)
                 // (3) (1, 9)
@@ -60,10 +60,9 @@ class SutdaDeck
                 1. jokbo(HashMap)에 족보를 저장한다.
                     두 카드의 값을 문자열로 붙여서 key로, 점수를 value로 저장한다.
         */
-        jokbo.put("KK", 4000);
-        for (int i = 1; i <= 10; i++) {
+//        jokbo.put("KK", 4000);
+        for (int i = 1; i <= 10; i++)
             jokbo.put(i + "" + i + "", 3000 + (10 * i));
-        }
         jokbo.put("12", 2060);
         jokbo.put("21", 2060);
         jokbo.put("14", 2050);
@@ -91,25 +90,12 @@ class SutdaDeck
                 4. Player의 점수(point)에 계산한 값을 저장한다.
         */
 //            jokbo.get("1010")
-            if(c1.isKwang && c2.isKwang) {
+            if(c1.isKwang && c2.isKwang)
                 p.point = 4000;
-            } else if(jokbo.containsKey(c1.num + "" + c2.num)){
-//                Collection values = jokbo.values();
-//                Iterator it = values.iterator();
-//                while(it.hasNext()) {
-//                    if(jokbo.containsKey(c1.num + "" + c2.num)) {
-//                        Integer i = (Integer)it.next();
-//                        p.point = i.intValue();
-//                    }
-//                }
+            else if(jokbo.containsKey(c1.num + "" + c2.num))
                 p.point = jokbo.get(c1.num + "" + c2.num);
-            } else {
+            else
                 p.point = (c1.num + c2.num) % 10 + 1000;
-            }
-
-
-
-
         result = result + p.point;
 
 

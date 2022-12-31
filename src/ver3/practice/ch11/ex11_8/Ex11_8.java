@@ -1,4 +1,4 @@
-package ver3.practice.ch11;
+package ver3.practice.ch11.ex11_8;
 
 // 문제 11-7의 Student클래스에 총점(total)과 전교등수(schoolRank)를 저장하기 위한 인스턴스변수를 추가하였다.
 // Student클래스의 기본정렬을 이름(name)이 아닌 총점(total)을 기준으로 한 내림차순으로 변경한 다음,
@@ -6,7 +6,7 @@ package ver3.practice.ch11;
 
 import java.util.*;
 
-class Student4 implements Comparable {
+class Student implements Comparable {
     String name;
     int ban;
     int no;
@@ -15,7 +15,7 @@ class Student4 implements Comparable {
     int math;
     int total; // 총점
     int schoolRank; // 전교등수
-    Student4(String name, int ban, int no, int kor, int eng, int math) {
+    Student(String name, int ban, int no, int kor, int eng, int math) {
         this.name = name;
         this.ban = ban;
         this.no = no;
@@ -37,8 +37,8 @@ class Student4 implements Comparable {
         // 1. 형변환 가능 여부 검사
         // 2. 형변환
         // 3. 기본정렬기준 반환
-        if(o instanceof Student4) {
-            int total = ((Student4)o).total;
+        if(o instanceof Student) {
+            int total = ((Student)o).total;
             return this.total > total ? -1 : (this.total == total ? 0 : 1);
         }
         return -1;
@@ -73,7 +73,7 @@ class Exercise11_8 {
         */
         // 3. 전교 등수 계산 - for문 사용
         for(int i = 0; i < length; i++) {
-            Student4 s = (Student4)list.get(i);     // 1.
+            Student s = (Student)list.get(i);     // 1.
 
             // 문제를 쉽게 만든다.
             // 1 번째 학생 1등 == i + 1 (i == 0)
@@ -93,11 +93,11 @@ class Exercise11_8 {
     }
     public static void main(String[] args) {
         ArrayList list = new ArrayList();
-        list.add(new Student4("이자바",2,1,70,90,70));
-        list.add(new Student4("안자바",2,2,60,100,80));
-        list.add(new Student4("홍길동",1,3,100,100,100));
-        list.add(new Student4("남궁성",1,1,90,70,80));
-        list.add(new Student4("김자바",1,2,80,80,90));
+        list.add(new Student("이자바",2,1,70,90,70));
+        list.add(new Student("안자바",2,2,60,100,80));
+        list.add(new Student("홍길동",1,3,100,100,100));
+        list.add(new Student("남궁성",1,1,90,70,80));
+        list.add(new Student("김자바",1,2,80,80,90));
         calculateSchoolRank(list);
         Iterator it = list.iterator();
         while(it.hasNext())
