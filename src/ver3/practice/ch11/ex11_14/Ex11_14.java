@@ -65,7 +65,7 @@ class Ex11_14
     // 데이터를 입력받는 메서드
     static void inputRecord() {
         System.out.println("1. 학생성적 입력하기 ");
-        System.out.println(" 이름, 반, 번호, 국어성적, 영어성적, 수학성적'의 순서로 공백없이 입력하세요.");
+        System.out.println(" 이름,반,번호,국어성적,영어성적,수학성적'의 순서로 공백없이 입력하세요.");
         System.out.println(" 입력을 마치려면 q를 입력하세요. 메인화면으로 돌아갑니다.");
         while(true) {
             System.out.print(">>");
