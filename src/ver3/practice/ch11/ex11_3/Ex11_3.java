@@ -1,4 +1,4 @@
-package ver3.practice.ch11;
+package ver3.practice.ch11.ex11_3;
 
 // 다음 중 ArrayList에서 제일 비용이 많이 드는 작업은?
 // 단, 작업도중에 ArrayList의 크기 변경이 발생하지 않는다고 가정한다.

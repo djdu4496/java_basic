@@ -1,4 +1,4 @@
-package ver3.practice.ch11;
+package ver3.practice.ch11.ex11_2;
 
 // 다음의 코드의 실행결과를 적으시오.
 
