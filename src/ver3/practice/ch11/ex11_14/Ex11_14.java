@@ -78,17 +78,28 @@ class Ex11_14
                 4. q 또는 Q가 입력될 때까지 2~3의 작업을 반복한다.
             */
             try {
-                String input = s.nextLine().trim();
-                if(!input.equalsIgnoreCase("q")) {
-                    Scanner s2 = new Scanner(input).useDelimiter(",");
-                    record.add(new Student(s2.next(), s2.nextInt(), s2.nextInt(), s2.nextInt(), s2.nextInt(), s2.nextInt()));
-                    System.out.println("잘 입력되었습니다. 입력을 마치려면 q를 입력하세요.");
-                } else {
-                    // 입력 받은 값이 q 또는 Q이면 메서드를 종료한다.
-                    return;
+
+//              Scanner s2 = new Scanner(System.in);
+//              String input = s2.next();
+                int size = record.size();
+//                System.out.println("이전 size : " + size);
+                String input = s.nextLine();
+                if(input.equalsIgnoreCase("q")) return;  // 입력 받은 값이 q 또는 Q이면 메서드를 종료한다.
+
+//              java.util.StringTokenizer st = new java.util.StringTokenizer(s.nextLine(), ",");
+                java.util.StringTokenizer st = new java.util.StringTokenizer(input, ",");
+                record.add(new Student(st.nextToken(), Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken())));
+                if(record.size() == size) {
+                    throw new Exception();
                 }
+                System.out.println("잘 입력되었습니다. 입력을 마치려면 q를 입력하세요.");
+
+
             } catch (Exception e) {
-                System.out.println("입력 오류입니다. 이름, 반, 번호, 국어성적, 영어성적, 수학성적'의 순서로 입력하세요.");
+//                System.out.println("이후 size : " + record.size());
+                System.out.println("입력 오류입니다. 이름,반,번호,국어성적,영어성적," +
+                        "수학성적'의 순서로 입력하세요.");
+
             }
 
         } // end of while
