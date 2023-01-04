@@ -39,27 +39,40 @@ class Student {
     }
 } // class Student
 
-class BanNoAscending implements Comparator {
-    public int compare(Object o1, Object o2) {
+class BanNoAscending implements Comparator<Student> {
+    public int compare(Student o1, Student o2) {
         /*
         (1) . 알맞은 코드를 넣어 완성하시오
         */
         // 1. 형변환 검사
         // 2. 형변환
         // 3. 비교기준 반환
-        if(o1 instanceof Student && o2 instanceof Student) {
-            int ban1 = ((Student)o1).ban;
-            int ban2 = ((Student)o2).ban;
-            int no1 =  ((Student)o1).no;
-            int no2 =  ((Student)o2).no;
-            return ban1 < ban2 ? -1 : (ban1 == ban2 ? (no1 < no2 ? -1 : (no1 == no2 ? 0 : 1)) : 1);
-        }
-        return -1;
+//        if(o1 instanceof Student && o2 instanceof Student) {
+//            int ban1 = ((Student)o1).ban;
+//            int ban2 = ((Student)o2).ban;
+//            int no1 =  ((Student)o1).no;
+//            int no2 =  ((Student)o2).no;
+//            return ban1 < ban2 ? -1 : (ban1 == ban2 ? (no1 < no2 ? -1 : (no1 == no2 ? 0 : 1)) : 1);
+//        }
+//        return -1;
+
+        // second try
+        int ban1 = o1.ban;
+        int ban2 = o2.ban;
+
+        int no1 = o1.no;
+        int no2 = o2.no;
+
+        if(ban1 < ban2)
+            return -1;
+        else
+            return ban1 == ban2 ? (no1 < no2 ? -1 : (no1 == no2 ? 0 : 1)) : 1;
+
     }
 }
 public class Ex11_7 {
     public static void main(String[] args) {
-        ArrayList list = new ArrayList();
+        ArrayList<Student> list = new ArrayList<>();
         list.add(new Student("이자바",2,1,70,90,70));
         list.add(new Student("안자바",2,2,60,100,80));
         list.add(new Student("홍길동",1,3,100,100,100));
@@ -80,3 +93,5 @@ public class Ex11_7 {
 // 안자바,2,2,60,100,80,240,80.0
 // [삽질기록]
 // 클래스명을 Student$ 숫자로 변경하는 과정에서 누락이 있어서 출력이 정상적으로 되지 않았다.
+// [피드백]
+// 지네릭스를 적용하면, 형변환 검사 및 형변환도 생략할 수 있다.
