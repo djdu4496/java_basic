@@ -44,6 +44,7 @@ class BanNoAscending implements Comparator<Student> {
         /*
         (1) . 알맞은 코드를 넣어 완성하시오
         */
+        // first try
         // 1. 형변환 검사
         // 2. 형변환
         // 3. 비교기준 반환
