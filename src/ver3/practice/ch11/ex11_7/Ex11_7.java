@@ -57,7 +57,7 @@ class BanNoAscending implements Comparator<Student> {
 //        }
 //        return -1;
 
-        // second try
+        // second try  
         int ban1 = o1.ban;
         int ban2 = o2.ban;
 
