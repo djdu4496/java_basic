@@ -1,7 +1,7 @@
 package ver3.ch7.interfaceTest;
 
 class A {
-    public void methodA(ver3.ch7.interfaceTest2.B b) {
+    public void methodA(B b) {
         b.methodB();
     }
 }
@@ -12,10 +12,10 @@ class B {
     }
 }
 
-class InterfaceTest {
+public class InterfaceTest {
     public static void main(String args[]) {
-        ver3.ch7.interfaceTest2.A a = new ver3.ch7.interfaceTest2.A();
-        a.methodA(new ver3.ch7.interfaceTest2.B());
+        A a = new A();
+        a.methodA(new B());
     }
 }
 
